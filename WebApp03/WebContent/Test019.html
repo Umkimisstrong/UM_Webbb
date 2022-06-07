@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Test019.html</title>
+
+<script type="text/javascript">
+	function looping()
+	{
+		var num = parseInt(document.getElementById("num").value);
+		
+		if (num<100)
+		{
+			alert("100이상만 입력이 가능합니다. 다시시도해주세요");
+			return;
+		}
+		
+		//alert("정상실행");
+		
+		var n = 1;
+		var sum = 0;
+		document.getElementById("print").value = "";
+		for (var i = 0; i < num; i++)
+		{
+			sum += n;
+			if (n%10==0)
+				document.getElementById("print").value += "1 ~ " + n + " : " +sum + "\n";
+			n++;
+		}
+		document.getElementById("print").value += ">> 1 ~ " + num + " : " + sum;
+		
+		
+	}
+</script>
+<!-- 
+1 ~ 10 : 55
+1 ~ 20 : 210
+1 ~ 30 : 465
+1 ~ 40 : 820
+1 ~ 50 : 1275
+1 ~ 60 : 1830
+1 ~ 70 : 2485
+1 ~ 80 : 3240
+1 ~ 90 : 4095
+1 ~ 100 : 5050
+1 ~ 110 : 6105
+>> 1 ~ 111 : 6216
+ -->
+
+</head>
+<body>
+<!-- 
+	사용자로부터 임의의 정수 n을 입력받아
+	1부터 n까지의 합을 계산하되 n은 100이상만 허용하고
+	출력 시 10의 배수가 될 때 마다 중간 합을 출력할 수 있는
+	페이지를 구성한다.
+	반복문 활용~!
+	
+	HTML, CSS, Javascript 활용
+	
+	페이지 레이아웃	                (알림 : 입력값은 100이상만 가능!)
+	---------------------------------------↑-------
+	정수 입력(100 이상) [  100	] → 조건 유효성 검사
+		
+		 <결과> 		<취소>
+	----------------------------- → textarea
+	1 ~ 10 : 55			┐	
+	1 ~ 20 : 210		│	
+	1 ~ 30 : xxx		│ 중간합
+	    :				│
+	1 ~ 100 : 5050		┘
+	1 ~ 101 : 5151    	- 최종합
+	-----------------------------
+		
+	-----------------------------------------------
+		
+-->
+<div>
+	<h1>자바스크립트 활용(반복문)</h1>
+	<hr>
+</div>
+
+<div>
+	<form>
+		<table>
+			<tr>
+				<th colspan = "2">
+					정수 입력(100이상)[ <input type="text" id = "num"  style = "border-color: red"> ]			
+				</th>
+			</tr>
+			<tr>
+				<th><input type = "button" id = "result" value = "결과" onclick = "looping()"></th>
+				<th><input type = "reset" value = "취소"></th>
+			</tr>
+
+		</table>
+	</form>
+</div>
+<div>
+	<form>
+		<textarea cols="50"  rows="100" id = "print" >
+		</textarea>
+	</form>
+</div>
+
+
+</body>
+</html>

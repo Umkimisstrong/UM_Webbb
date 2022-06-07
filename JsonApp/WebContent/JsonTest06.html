@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JsonTest06.html</title>
+<script type="text/javascript">
+	
+	/* // ①
+	var myJsonObject6=
+	{
+		"test" : 123	
+	}
+	 */
+	 
+	/*  
+	// ② 
+	var myJsonObject6=
+	{
+		"test" : 123.456	
+	}
+	*/
+/* 	
+	var myJsonObject6 =
+	{
+		"test" : true	
+	}	
+ */	
+	var myJsonObject6 =
+	{
+		"test" : null	
+	}	
+</script>
+</head>
+<body>
+
+<form action="">
+	<input type="button" value="click1" onclick="alert(myJsonObject6.test)" />
+	<!-- 123 -->
+	<!-- 123.456 -->
+	<!-- true -->
+	<!-- null -->
+	
+	<input type="button" value="click2" onclick="alert(typeof myJsonObject6.test)" />
+	<!-- number -->
+	<!-- number -->
+	<!-- boolean -->
+	<!-- object -->
+	
+		<input type="button" value="click3"
+		 onclick="myJsonObject6.test=false; alert(myJsonObject6.test)" />
+		 
+		<input type="button" value="click4"
+		 onclick="myJsonObject6.test=false; alert(typeof myJsonObject6.test)" />
+	
+</form>
+
+
+
+</body>
+</html>

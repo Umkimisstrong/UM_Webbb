@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>BootEx06.html</title>
+</head>
+<body>
+
+<div>
+	<h1>기본 폼 구성하기</h1>
+	<hr />
+</div>
+
+
+<div id="content">
+	<h3>재고 관리 <small>입출고 관리하기</small></h3>
+	
+	<form action="">
+	
+		<div>
+			<label for="">입력하기</label>
+			
+			<div class="input-group">
+				<div class="input-group-addon">원두	</div>
+					<input type="text" id="txtCount" placeholder="수량을입력하세요" 
+				 			 required="required" class="form-control"/>
+				  <div class="input-group-addon">kg</div>
+				  
+				  <div class="input-group">
+				  	<div class="input-group-addon">우유</div>
+						<input type="text" id="txtCheck" placeholder="수량을입력하세요" 
+				  			required="required" class="form-control"/>
+				  <div class="input-group-addon">ml</div>
+				  
+				  </div>
+				  
+				  <input type="submit"  value="입력하기" class="btn btn-default"/>
+				  
+			</div>
+		</div>
+	
+	</form>
+</div>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Test026.html</title>
+<style type="text/css">
+
+	/* 나의 스타일.. 명령 프롬프트 */
+	*
+	{
+		background-color: white;
+		font-family: 나눔고딕코딩;
+		font-size: 20pt;
+		color: #ababab;
+		font-weight: bold;
+	}
+	h1
+	{
+		font-size: 40pt;
+		color: #ababab;
+		background-color:	black;
+		margin: 0%;
+	}
+	hr
+	{
+		background-color: #ababab;
+		height: 15px;
+	}
+	input.btn
+	{
+		background-color: black;
+		width: 250px;
+		text-align: center;
+	}
+	input.btn:hover
+	{
+			background-color: red;
+			color: white;
+	}
+	input.txtbox
+	{
+		 width: 100px;
+		 text-align: center;
+	}
+	input.txtbox:hover
+	{
+		background-color: blue;
+		color: white;
+	}
+</style>
+
+<script type="text/javascript">
+	function rspStart()
+	{
+		//alert("갈라보");
+		var str = document.getElementById("rspGame").value;
+		//alert(str);
+		
+		var user = "";
+		if (str == 1)
+		{
+			user = "가위";
+		}
+		else if (str == 2)
+		{
+			user = "바위";
+		}
+		else if (str == 3)
+		{
+			user = "보";
+		}
+		else
+		{			
+			alert("잘못된 입력값입니다.");
+			return;			
+		}
+		//alert(user);
+		
+		
+		document.getElementById("user").value = user;
+		
+		var computer = "";
+		//alert(Math.random());
+		// --==>>0.03368938754690243
+		// --==>>0.002428453569732758
+		// --==>>0.3969538421454111
+		alert(Math.random()*3);
+		// --==>> 1.2381584237861534
+		// --==>> 3.8604265838514173
+		
+		
+		var c = parseInt(Math.random()*3+1);
+		
+		if (c == 1)
+		{
+			computer = "가위";
+		}
+		else if (c == 2)
+		{
+			computer = "바위";
+		}
+		else if (c == 3)
+		{
+			computer = "보";
+		}
+		document.getElementById("computer").value = computer;
+		
+		if (str == c )
+		{
+			document.getElementById("gameResult").value = "무승부";
+		}
+		else if (str%3 == (c+2)%3)
+		{
+			// str%3 == (c+2)%3 .. → 이조건
+			// 컴퓨터가 이긴경우
+			document.getElementById("gameResult").value = "컴퓨터 승";
+		}
+		else
+			document.getElementById("gameResult").value = "사용자 승";
+		
+		
+		
+	}
+</script>
+</head>
+<body>
+
+<!-- w3schools.com -->
+<!-- koxo.com -->
+
+<!-- 
+	가위바위 보 게임을 구성.
+	HTML, CSS, Javascript 를 활용한다.
+	자바스크립트 난수 발생 함수를 찾아 활용한다.
+	
+	페이지 레이아웃
+	--------------------------------------------------------
+	입력(1.가위, 2.바위, 3.보)     [   2   ] <게임 결과 확인>
+	 
+	[ 사용자 : 바위    컴퓨터 : 보  → 컴퓨터가 이겼습니다. ]
+	---------------------------------------------------------
+ -->
+<div>
+	<h1>나의 공간, 가위바위보하기</h1>
+	<hr>
+</div>
+
+<div>
+	<form>
+		<table border = "1">
+			<tr>
+				<th colspan = "6">
+					★컴퓨터 이기기★
+				</th>
+			</tr>
+			<tr>
+				<td colspan = "4">
+				입력(1.가위, 2.바위, 3.보) ▶
+				</td>
+				<td>
+					<input class = "txtbox" type = "text" id = "rspGame" >
+				</td>
+				<td>
+					<input type = "button" id = "rspResult"  value = "<게임 결과 확인>" class = "btn" onclick = "rspStart()">
+				</td>
+			</tr>
+			<tr>
+				<td>
+					사용자 : 
+				</td>
+				<td>
+					<input type = "text" class = "txtbox" id = "user" readonly = "readonly">
+				</td>
+				<td>
+					컴퓨터 : 
+				</td>
+				<td>
+					<input type = "text" class = "txtbox" id = "computer" readonly = "readonly">
+				</td>
+				<th>
+					→ 
+				</th>
+				<td>
+					<input style = "width: 250px" type = "text" class = "txtbox" id = "gameResult" readonly = "readonly">
+				</td>
+			</tr>
+		</table>
+	</form>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Test015.html</title>
+<style type="text/css">
+
+	*
+	{
+		color: #340331;
+		font-family: 맑은 고딕;
+	}
+	
+	input.box
+	{
+		background-color: tomato;
+	}
+	input.box:focus
+	{
+		background-color: yellow;
+	}
+	input.btn:hover
+	{
+		color: orange;
+		font-weight: bold;
+	}
+	input.numberBox
+	{	
+		width: 50px;
+		background-color: black;
+		font-style: italic;
+		color: white;
+		text-align: right;
+	}
+	
+	
+</style>
+
+<script type="text/javascript">
+	function click1()
+	{
+		// 테스트
+		// alert("A버튼클릭확인~!!")
+		// alert(document.getElementById("txtLeft").value);
+		
+		// 왼쪽박스에 입력된 메세지를 값으로 얻어오기
+		var msgLeft = document.getElementById("txtLeft");
+		// 오른쪽박스에 입력된 메세지를 값으로 얻어오기
+		var msgRight = document.getElementById("txtRight");
+	
+		// 왼쪽 값을 오른쪽 값에 대입
+		msgRight.value=msgLeft.value;
+	}
+	
+	function click2()
+	{
+		// 테스트
+		// alert("B버튼클릭확인~!!")
+		
+		// 왼쪽박스에 입력된 메세지를 값으로 얻어오기
+		var msgLeft = document.getElementById("txtLeft");
+		// 오른쪽박스에 입력된 메세지를 값으로 얻어오기
+		var msgRight = document.getElementById("txtRight");
+	
+		// 오른쪽 값을 왼쪽 값에 대입
+		msgLeft.value = msgRight.value;
+	}
+	
+	// 내가만든거
+	function clearAll()
+	{
+		var msgLeft = document.getElementById("txtLeft");
+		var msgRight = document.getElementById("txtRight");
+
+		msgLeft.value = "";
+		msgRight.value = "";
+	}
+	
+	function clickCal()
+	{
+		// 테스트
+		// alert("계산시작~!"); 성공
+		// 값 떠오기 getEle.value로 떠오면 Object..? 그다음 Int로형변환
+		var leftNum = parseInt(document.getElementById("txtNumber01").value);
+		
+		// 값 확인
+		// alert(leftNum.value);
+		
+		// 값 떠오기 getEle.value로 떠오면 Object..? 그다음 Int로형변환		
+		var rightNum = parseInt(document.getElementById("txtNumber02").value);
+		
+		// 값 확인
+		//alert(RightNum.value);
+		
+		// 떠온 값을 변수에 담아 연산해보기
+		var ResultNum = leftNum+rightNum;
+		
+		// 연산값 확인
+		// alert(ResultNum);
+		// 결과값 떠와서 밸류에 담기
+		var conclNum = document.getElementById("txtResult");
+		conclNum.value = ResultNum;
+		
+		
+	}
+	
+	
+</script>
+
+</head>
+<body>
+
+<div>
+	<h1>자바스크립트 기본 관찰</h1>
+	<hr>
+</div>
+
+<div>
+	<br>
+	<input type = "text" class = "box" id = "txtLeft">
+	<input type = "button" value = "A버튼" class="btn" id="btnA" onclick = click1()>
+	<input type = "button" value = "청소" class = "btn" id = "clear" onclick = clearAll()>
+	
+	<input type = "button" value = "B버튼" class="btn" id="btnB" onclick = click2()>
+	<input type = "text" class = "box"  id="txtRight">
+	<br>
+	<br>
+	<br>
+	<input type="text" class = "numberBox" id="txtNumber01">
+	+
+	<input type="text" class = "numberBox" id="txtNumber02">
+	<input type="button" value = " = "  class = "btn" id ="btnResult" onclick = clickCal()>
+	<input type="text" class="numberBox" id="txtResult" disabled = "disabled">
+	
+	
+</div>
+
+</body>
+</html>

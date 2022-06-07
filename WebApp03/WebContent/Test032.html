@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Test032.html</title>
+
+<style type="text/css">
+
+	/* 나의 스타일.. 명령 프롬프트 */
+	*
+	{
+		background-color: white;
+		font-family: 나눔고딕코딩;
+		font-size: 20pt;
+		color: #ababab;
+		font-weight: bold;
+	}
+	h1
+	{
+		font-size: 40pt;
+		color: #ababab;
+		margin: 0%;
+	}
+	hr
+	{
+		background-color: #ababab;
+		height: 15px;
+	}
+	input.btn
+	{
+		width: 150.5px;
+		background-color: black;
+		text-align: center;
+	}
+	input.btn:hover
+	{
+			background-color: tomato;
+			color: white;
+	}
+	input.txtbox
+	{
+		 width: 350px;
+		 text-align: center;
+	}
+	input.txtbox:hover
+	{
+		background-color: skyblue;
+		color: white;
+	}
+	select.txtbox
+	{
+		width: 208px; text-align: center;
+	}
+	#memberList
+	{
+		width: 700px;
+	}
+</style>
+
+<script type="text/javascript">
+	function searchAddr()
+	{
+		// 확인
+		// alert("함수 호출 확인");
+		window.open("Test033.html", "test", "width=500, height=300"); 
+	}
+</script>
+</head>
+<body>
+
+<div>
+	<h1>자바스크립트 활용</h1>
+	<hr>
+</div>
+
+<div>
+	<h2>주소 검색</h2>
+	<form>
+		기본 주소
+		<input type = "text" id = "addr1" readonly = "readonly" class = "txtbox">
+		<input type = "button" value = "검색" class = "btn" onclick = "searchAddr()">
+		
+		상세 주소
+		<input type = "text" id = "addr2" class = "txtbox">
+		<br><br>
+		
+		<span id = "txt1" style = "color: red; font-weight: bold">눈으로확인할수있도록처리</span>	
+	</form>
+</div>
+</body>
+</html>

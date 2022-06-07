@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Test023.html</title>
+<style type="text/css">
+	*
+	{
+		background-color: black;
+		font-family: 나눔고딕코딩;
+		font-size: 20pt;
+		color: grey;
+		font-weight: bold;
+	}
+</style>
+
+<script type="text/javascript">
+	function leadingZeros(n)
+	{
+		var zero = "";
+		n = n.toString();
+		
+		if (n.length<3)
+		{
+			for (var i = 0; i < 3-n.length; i++)
+			{
+				zero += " ";
+			}
+		}
+		return zero + n;
+	}
+
+	
+	function addScore()
+	{
+		//alert("함수");
+		var arr = new Array();
+		var tot = new Array();
+		var grade = new Array();
+		var count = 0;
+
+		var str = "";
+		arr = new Array(new Array(), new Array(), new Array(), new Array(), new Array(), new Array())
+				//        이름들       국어점수들   영어점수들     수학점수들  총점들     등수들		
+		do
+		{
+			str = prompt("이름 국어 영어 수학(" + (count+1) + ")");
+			
+			if (str == " " || str == "." || str == null)
+				break;
+			
+			//alert(str);
+			
+			// 배열로 이름 / 국어 / 영어 / 수학 / 총점 / 등수(디폴트 1) 반환
+			var member = str.split(" ");
+			/*
+			alert(member[0]);
+			alert(member[1]);
+			alert(member[2]);
+			alert(member[3]);
+			*/		
+			// 이름
+			arr[0][count] = member[0];
+			// 국어
+			arr[1][count] = leadingZeros(member[1]);
+			// 영어
+			arr[2][count] = leadingZeros(member[2]);
+			// 수학
+			arr[3][count] = leadingZeros(member[3]);
+			// 총점
+			arr[4][count] = leadingZeros((parseInt(member[1]) + parseInt(member[2]) + parseInt(member[3])).toString());
+			// 등수
+			arr[5][count] = "1"; // 등수는 죄다 1로 통일하고 성적으로 비교해서 1씩증가
+			
+			//alert(arr[count]);
+			
+			count++; 
+		} while (true);
+		
+		for (var i = 0; i < arr[0].length; i++)
+		{
+			for (var j = 0; j < arr[0].length; j++)
+			{
+				if (i==j)
+				{
+					// 비교용 인덱스... i와 j가 같은 경우
+					// i가 0일때 j는 1 2 3 4 .. 이름배열 arr[0]의 길이(사람수)만큼 비교하고
+					// i가 1로넘어와서 j는 0 2 3 4 .. 
+					// i가 2로넘어와서 j는 0 1 3 4 ..
+					// 서로 비교한게 없을때까지 (자기자신과비교하는거제외) 비교한다.
+					continue; // 뒷부분 미실시
+				}
+				// i와 j가 다른경우 비교하는건데 밑 조건
+				// → arr[5][변수] 항은 성적의 총합... 
+				// i보다 j가 크다면(기존것보다 비교인자가 더 크다면)
+				// → arr[1][변수] 항은 등수(디폴트 1 )이므로.. 성적들의 숫자를
+				// 낮은 인자에 1씩높이기
+				// 그렇다면 등수 배열은
+				// 1 3 5 7 2 6 8 4 9 11 10 ... 이런식으로 형성될것임
+				// 왜 문자로 했는지는 모르겠지만..
+				if (Number(arr[4][i]) < Number(arr[4][j]) )
+				{
+					arr[5][i] = (Number(arr[5][i])+1).toString();
+				}
+			}
+		}
+		
+		var result = "";
+		
+		for (var j = 0; j < arr[0].length; j++)
+		{
+			for (var k = 0; k < arr.length; k++)
+			{
+				// 6개속성배열     0번째(첫번째학생)
+				// arr        [0]  [0]  → 0 : 이름 
+				// arr        [1]  [0]  → 1 : 국어
+				// arr        [2]  [0]	→ 2 : 영어
+				// arr        [3]  [0]	→ 3 : 수학
+				// arr        [4]  [0]  → 4 : 총점
+				// arr        [5]  [0]	→ 5 : 등수
+				result += arr[k][j] + " "+" "+" ";
+			}
+			result += "\n";
+		}
+		document.getElementById("count").value = arr[0].length;
+		document.getElementById("students").value = "  이름  국어  영어  수학  총점  등수";
+		document.getElementById("students").value += "====================================\n";
+		document.getElementById("students").value += result;
+	}
+</script>
+</head>
+<body>
+
+<!-- 
+	prompt() 를 활용하여 여러 명의 성적 데이터를 입력받고.
+	등수를 부여하여, 리스트를 출력하는 페이지를 구성한다.
+	HTML, CSS, Javascript 활용.
+	
+	페이지 레이아웃
+	-----------------------------------------------------
+	<성적 정보 입력> → → → → →  prompt() → → → →  이름 국어 영어 수학(1) : 
+	전체 인원 수 : [         ] 명 (배열 길이)
+	----------------------------------------
+	이름   국어   영어   수학   총점   등수
+	----------------------------------------
+	
+	
+	---------------------------------------- 
+	-----------------------------------------------------
+ -->
+<div>
+	<h1> 성적입력 및 등수 산출 </h1>
+	<hr>
+</div>
+
+<div>
+	<form>
+		<table>
+			<tr>
+				<td>
+					<input type = "button" id = "score" value = "성적정보입력" onclick = "addScore()">
+				</td>
+			</tr>
+			<tr>
+				<th>
+					전체 인원 수 :
+					<input type = "text" id = "count" style = "width: 20px">
+					명 
+				</th>
+			</tr>
+		</table>
+	</form>
+</div>
+
+<div>
+	<form>
+		<textarea rows="30" cols="40" id = "students" readonly = "readonly"></textarea>
+	</form>
+	
+</div>
+
+</body>
+</html>

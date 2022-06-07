@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Send02.html</title>
+<link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body>
+<div>
+	<h1>데이터전송 실습~</h1>
+	<hr>
+	
+</div>
+<div>
+	<form action="Receive02.jsp" method="post">
+		<table class="table">
+			<tr>
+				<th>이름</th>
+				<td>
+					<input type="text" name="userName" class="txt" placeholder="ex)홍길동">
+				</td>
+			</tr>
+			<tr>
+				<th>국어점수</th>
+				<td>
+					<input type="text" name="userKor" class="txt" placeholder="0~100">
+				</td>
+			</tr>
+			<tr>
+				<th>영어점수</th>
+				<td>
+					<input type="text" name="userEng" class="txt" placeholder="0~100">
+				</td>
+			</tr>
+			<tr>
+				<th>수학점수</th>
+				<td>
+					<input type="text" name="userMat" class="txt" placeholder="0~100">
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<button type="submit" class="btn control" style="width: 150px;">전송</button>
+					<button type="reset" class="btn control" style="width: 150px;">취소</button>
+				</td>
+			</tr>
+			
+			
+		</table>	
+	</form>
+</div>
+</body>
+</html>

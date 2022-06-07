@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Test028.html</title>
+<style type="text/css">
+
+	/* 나의 스타일.. 명령 프롬프트 */
+	*
+	{
+		background-color: white;
+		font-family: 나눔고딕코딩;
+		font-size: 20pt;
+		color: #ababab;
+		font-weight: bold;
+	}
+	h1
+	{
+		font-size: 40pt;
+		color: #ababab;
+		margin: 0%;
+	}
+	hr
+	{
+		background-color: #ababab;
+		height: 15px;
+	}
+	input.btn
+	{
+		background-color: black;
+		width: 250px;
+		text-align: center;
+	}
+	input.btn:hover
+	{
+			background-color: red;
+			color: white;
+	}
+	input.txtbox
+	{
+		 width: 100px;
+		 text-align: center;
+	}
+	input.txtbox:hover
+	{
+		background-color: blue;
+		color: white;
+	}
+</style>
+<script type="text/javascript">
+
+	function actionChoice()
+	{
+		// 확인
+		//alert("함수호출 확인~!!");
+		
+		//                    check!  radio 값 불러오기 
+		var radioObj = document.getElementsByName("radioGroup");
+		//alert(radioObj);// -==>[object NodeList]
+		//alert(radioObj.length);// -==> 6
+		var msg = "선택된 항목이 존재하지 않습니다.";
+		
+		for (var i = 0; i < radioObj.length; i++)	// 0 1 2 3 4 5
+		{
+			// 확인
+			//alert(radioObj[i].checked);
+			// 1번선택시 : t f f f f f 
+			// 2번선택시 : f t f f f f 
+			// 3번선택시 : f f t f f f
+			//  :
+			// 6번 		 : f f f f f t
+			if (radioObj[i].checked)
+			{
+				//확인
+				//alert(i); (인덱스반환)
+				//alert(radioObj[i].value); //(해당인덱스의 라디오버튼 반환)
+				msg = "당신이 선택한 사이즈는 아이스크림 종류를" + radioObj[i].value + "개 고를 수 있습니다.";
+				break;
+				
+			}
+		}
+		
+		alert(msg);
+	}
+	
+	
+</script>
+</head>
+<body>
+
+
+<div>
+	<h1>자바스크립트 활용</h1>
+	<hr>
+</div>
+
+<div>
+	<h2>라디오버튼, 체크박스 다루기</h2>
+	
+	<form>
+		 --- 사이즈 선택 --- <br> <br>
+              <!-- name속성으로 단일화(중복체크불가)                         for 속성으로 텍스트를 눌러도 라디오활성화 -->
+		 <input type = "radio" name = "radioGroup" id="a" value = "1"><label for ="a" >싱글(1)</label>
+		 <input type = "radio" name = "radioGroup" id="b" value = "2"><label for ="b" >더블(2)</label>
+		 <input type = "radio" name = "radioGroup" id="c" value = "3"><label for ="c" >파인트(3)</label>
+		 <input type = "radio" name = "radioGroup" id="d" value = "4"><label for ="d" >쿼터(4)</label>
+		 <input type = "radio" name = "radioGroup" id="e" value = "5"><label for ="e" >패밀리(5)</label>
+		 <input type = "radio" name = "radioGroup" id="f" value = "6"><label for ="f" >하프갤런(6)</label>
+		 <br><br>
+		 <button type = "button" class = "btn" onclick = "actionChoice()">확인</button>
+	</form>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

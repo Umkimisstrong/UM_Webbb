@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>BootEx02.html</title>
+
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+<script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+<style type="text/css">
+	/* 테이블 기본 서식 */
+	#table
+	{
+		width: 500px;
+		border: 1px solid black;
+		border-collapse: collapse;
+	}
+	#table td
+	{
+		border: 1px solid black;
+	}
+	
+	
+	
+	
+</style>
+</head>
+
+<body>
+
+
+
+<h1>1. 기본 테이블 <small>기본</small></h1>
+<table>
+	<tr>
+		<td>cell</td>
+		<td>cell</td>
+		<td>cell</td>
+		<td>cell</td>
+	</tr>
+	<tr>
+		<td>cell</td>
+		<td>cell</td>
+		<td>cell</td>
+		<td>cell</td>
+	</tr>
+	<tr>
+		<td>cell</td>
+		<td>cell</td>
+		<td>cell</td>
+		<td>cell</td>
+	</tr>
+	<tr>
+		<td>cell</td>
+		<td>cell</td>
+		<td>cell</td>
+		<td>cell</td>
+	</tr>
+	<tr>
+		<td>cell</td>
+		<td>cell</td>
+		<td>cell</td>
+		<td>cell</td>
+	</tr>
+	<tr>
+		<td>cell</td>
+		<td>cell</td>
+		<td>cell</td>
+		<td>cell</td>
+	</tr>
+	<tr>
+		<td>cell</td>
+		<td>cell</td>
+		<td>cell</td>
+		<td>cell</td>
+	</tr>
+	<tr>
+		<td>cell</td>
+		<td>cell</td>
+		<td>cell</td>
+		<td>cell</td>
+	</tr>
+	<tr>
+		<td>cell</td>
+		<td>cell</td>
+		<td>cell</td>
+		<td>cell</td>
+	</tr>
+	<tr>
+		<td>cell</td>
+		<td>cell</td>
+		<td>cell</td>
+		<td>cell</td>
+	</tr>
+</table>
+
+<br /><br />
+
+<h1>2. 기본 테이블 <small>스타일 적용</small></h1>
+
+<table id="table">
+	<tr>
+		<td>cell</td>
+		<td>cell</td>
+		<td>cell</td>
+		<td>cell</td>
+	</tr>
+	<tr>
+		<td>cell</td>
+		<td>cell</td>
+		<td>cell</td>
+		<td>cell</td>
+	</tr>
+	<tr>
+		<td>cell</td>
+		<td>cell</td>
+		<td>cell</td>
+		<td>cell</td>
+	</tr>
+	<tr>
+		<td>cell</td>
+		<td>cell</td>
+		<td>cell</td>
+		<td>cell</td>
+	</tr>
+	<tr>
+		<td>cell</td>
+		<td>cell</td>
+		<td>cell</td>
+		<td>cell</td>
+	</tr>
+	<tr>
+		<td>cell</td>
+		<td>cell</td>
+		<td>cell</td>
+		<td>cell</td>
+	</tr>
+	<tr>
+		<td>cell</td>
+		<td>cell</td>
+		<td>cell</td>
+		<td>cell</td>
+	</tr>
+	<tr>
+		<td>cell</td>
+		<td>cell</td>
+		<td>cell</td>
+		<td>cell</td>
+	</tr>
+	<tr>
+		<td>cell</td>
+		<td>cell</td>
+		<td>cell</td>
+		<td>cell</td>
+	</tr>
+	<tr>
+		<td>cell</td>
+		<td>cell</td>
+		<td>cell</td>
+		<td>cell</td>
+	</tr>
+</table>
+
+<h1>3. 부트스트랩 기본 테이블 <small>클래스 적용</small></h1>
+
+
+
+
+<table class="table">
+	<tr>
+		<td>cell</td>
+		<td>cell</td>
+		<td>cell</td>
+		<td>cell</td>
+	</tr>
+	<tr>
+		<td>cell</td>
+		<td>cell</td>
+		<td>cell</td>
+		<td>cell</td>
+	</tr>
+	<tr>
+		<td>cell</td>
+		<td>cell</td>
+		<td>cell</td>
+		<td>cell</td>
+	</tr>
+	<tr>
+		<td>cell</td>
+		<td>cell</td>
+		<td>cell</td>
+		<td>cell</td>
+	</tr>
+	<tr>
+		<td>cell</td>
+		<td>cell</td>
+		<td>cell</td>
+		<td>cell</td>
+	</tr>
+	<tr>
+		<td>cell</td>
+		<td>cell</td>
+		<td>cell</td>
+		<td>cell</td>
+	</tr>
+	<tr>
+		<td>cell</td>
+		<td>cell</td>
+		<td>cell</td>
+		<td>cell</td>
+	</tr>
+	<tr>
+		<td>cell</td>
+		<td>cell</td>
+		<td>cell</td>
+		<td>cell</td>
+	</tr>
+	<tr>
+		<td>cell</td>
+		<td>cell</td>
+		<td>cell</td>
+		<td>cell</td>
+	</tr>
+	<tr>
+		<td>cell</td>
+		<td>cell</td>
+		<td>cell</td>
+		<td>cell</td>
+	</tr>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

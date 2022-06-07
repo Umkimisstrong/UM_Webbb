@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item key="J2EE_EXPORT_OVERWRITE" value="true"/>
+	<item key="J2EE_EXPORT_SOURCE" value="true"/>
+	<list key="J2EE_IMPORT_null">
+		<item value="C:\WebStudy\JsonApp.war"/>
+		<item value="C:\WebStudy\AjaxJquery05.war"/>
+		<item value="C:\WebStudy\WebApp20_1.war"/>
+		<item value="C:\WebStudy\NaverItemSearch.war"/>
+		<item value="C:\WebStudy\AjaxJquery02.war"/>
+		<item value="C:\WebStudy\AjaxJquery01.war"/>
+	</list>
+	<list key="MRU_RUNTIME_STORE">
+		<item value="Apache Tomcat v8.5"/>
+	</list>
+	<list key="J2EE_EXPORT_JST_WEB">
+		<item value="C:\WebStudy\BootstrapApp.war"/>
+		<item value="C:\WebStudy\AjaxJquery06.war"/>
+		<item value="C:\WebStudy\WebApp20.war"/>
+		<item value="C:\WebStudy\AjaxApp.war"/>
+		<item value="C:\Users\SIST\Desktop\파이널프로젝트\JQueryApp.war"/>
+		<item value="F:\백업\WebApp00.war"/>
+	</list>
+</section>

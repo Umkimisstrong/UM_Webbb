@@ -1,0 +1,4 @@
+/**
+ * alertTest.js
+ */
+alert("heloow");

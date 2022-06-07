@@ -1,0 +1,28 @@
+/**
+ * ajax.js 
+ */
+
+
+var ajax = null;
+
+// AJAX 객체(XMLHttpRequest) 생성 함수
+function createAjax()
+{
+	if (window.ActiveXObject)
+	{
+		return new ActiveXObject("Msxml2.XMLHTTP");
+	}
+	else
+	{
+		if (window.XMLHttpRequest)
+		{
+			return new XMLHttpRequest();
+		}
+		else
+		{
+			return null;
+		}
+	}
+	
+	
+}

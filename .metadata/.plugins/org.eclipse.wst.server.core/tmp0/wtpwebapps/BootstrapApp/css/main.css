@@ -1,0 +1,94 @@
+@charset "UTF-8";
+
+*
+{
+	background-color: #8d6c2e;
+	font-family: 나눔고딕코딩;
+	color: #ababab;
+	font-weight: bold;
+}
+hr
+{
+	background-color: #ababab;
+	height: 10px;
+	border-bottom-color: #ababab;
+	border-right-color: #ababab;
+}
+body, p, div, span, input, table, th, td, select
+{
+	font-size: 18px;
+	font-weight: bold;
+}
+.txt
+{
+	font-weight: bold;
+	background-color: #408080;
+	width:150px;
+}
+.txt:focus
+{
+	font-weight: bold;
+	background-color: #948716;
+	width:150px;
+}
+
+.control
+{
+	border: 1px solid grey;
+	border-radius: 3px;
+	font-weight: bold;
+}
+
+.table
+{
+	border-collapse: collapse;
+	width: 250px;
+	font-weight: bold;
+}
+
+.table th, .table td
+{
+	border: 1px solid grey;
+	border-left: 1px;
+	border-right: 1px;
+	padding: 3px;
+	line-height: 150%;	
+	font-weight: bold;
+}
+.table td
+{
+	background-color: gray;
+	font-weight: bold;
+}
+.table th
+{
+	font-weight: bold;
+	background-color: #EEE;
+}
+.btn
+{
+	background-color: #8d6c2e;
+}
+
+.btn01
+{
+	font-weight: bold;
+	width: 80px;
+	color: blue;
+	background-color: gray;	
+	
+}
+.btn02
+{
+	font-weight: bold;
+	width: 80px;
+	color: red;
+	background-color: gray;
+}
+
+.btn:hover
+{
+	font-weight: bold;
+	color: white;
+	background-color: tomato;
+}

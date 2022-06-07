@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Test021.html</title>
+
+
+<style type="text/css">
+	body
+	{
+		margin: 0;
+	}
+	.title
+	{
+		height: 60px;
+		z-index: -1;
+	}
+	.head
+	{
+		padding:0;
+		margin:0;
+		text-align: center;
+		vertical-align: bottom;
+	}
+	.main
+	{
+		display: flex;
+		justify-content: center;
+	}
+	*
+	{
+		background-color: #334431;
+		font-size: 25pt;
+		color: #419221;
+	}
+	hr
+	{		
+		background-color: yellow;
+		height: 25px;
+	}
+	input.txtbox
+	{
+		color: #999900; 
+		text-align: right;
+		
+	}
+	input.btn
+	{
+		background-color: tomato;
+		color: white;
+	}
+	.tbl
+	{
+		width: 1000px;
+	}
+	
+	.tds
+	{
+		text-align: right;
+	}
+</style>
+
+	 
+<script type="text/javascript">
+	function print()
+	{
+		var arr = new Array();
+		//alert("3123");
+		var str = document.getElementById("data").value;
+		arr = str.split(" ")
+		document.getElementById("all").value = "";
+		
+		for (var i = 0; i < arr.length; i++)
+		{
+			document.getElementById("all").value += arr[i] + " ";
+		}
+		
+		var max = parseInt(arr[0]);
+		
+		// 33 44 55 66
+		alert(arr.length);
+		for (var i = 1; i < arr.length; i++)
+		{
+			if (max<arr[i])
+			{
+				max = arr[i];
+			}	
+		}
+		alert(max);
+		document.getElementById("largest").value = max;
+	}
+	
+	
+</script>
+
+
+</head>
+<body>
+<!-- 
+	사용자로부터 임의의 정수를 임의의 갯수만큼 입력받고,
+	그 내용으로 배열을 구성하여
+	구성한 정수들 중 가장 큰 수를 출력해 줄 수 있는 페이지를 구현한다.
+	HTML, CSS, Javascript 활용
+	
+	페이지 레이아웃
+	---------------------------------------------
+	데이터 입력(공백 구분) [ 21  86  285  43  7 ]
+					< 결과 확인 >
+	- 전체 출력	 [ 21  86  285  43  7 ]
+	- 가장 큰 수 		[ 285 ]				
+	---------------------------------------------
+ -->
+
+<div class = "head"> 
+	<h1> 얼큰한 자바스크립트.. 배열로 순위비교해보기</h1>
+	<hr>
+</div>
+
+<div class = "main">
+	<form>
+		<table class = "tbl" border="3">
+			<tr>
+				<td class = "tds">데이터 입력(공백구분)</td>
+				<td><input type = "text" id = "data" class = "txtbox"> </td>
+			</tr>
+			<tr>
+				<th colspan = "2">
+					<input type = "button" value = " < 결 과 확 인 > "   id = "result" onclick = "print()" class = "btn">
+				</th>
+			</tr>
+			
+			<tr>
+				<td class = "tds">전체 출력</td>
+				<td> <input type = "text" id = "all" class = "txtbox"></td>
+			</tr>
+			
+			<tr>
+				<td class = "tds">가장 큰 수</td>
+				<td><input type = "text" id = "largest" class = "txtbox"></td>
+			</tr>
+		</table>
+
+	</form>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

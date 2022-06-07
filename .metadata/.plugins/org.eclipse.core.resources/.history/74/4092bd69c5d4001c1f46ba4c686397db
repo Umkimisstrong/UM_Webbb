@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>BootEx03.html</title>
+
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+<script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+<style type="text/css">
+	form
+	{
+		width: 500px;
+		margin: 20px;
+	}
+	#table1
+	{
+		width: 720px;
+	}
+		
+	#table1 th { text-align: center;}
+	#table1 th:nth-child(1) { width: 50px;}
+	#table1 th:nth-child(2) { width: 460px;}
+	#table1 th:nth-child(3) { width: 60px;}
+	#table1 th:nth-child(4) { width: 100px;}
+	#table1 th:nth-child(5) { width: 50px;}
+	
+	#table1 td { width: 50px;}
+	#table1 td:nth-child(2) { text-align: left;}
+	#table1 td:nth-child(5) { text-align: right;}
+	
+	#btnSet {margin-top: -10px;}
+	#main {width: 700px; margin: 0px auto;}
+	
+	#tblAdd{width: 600px;}
+	#tblAdd th{width: 150px; text-align: right; padding-right: 15px;}
+	#tblAdd td{width: 450px;}
+	
+	
+		
+	
+</style>
+</head>
+<body>
+
+<div>
+<h1>회원 가입</h1>
+</div>
+
+<form action="">
+	<input type="text" class='form-control'/>
+	<br />
+	
+	<textarea name="" class='form-control' id="" cols="" rows=""></textarea>
+	<br />
+	
+	<select name="" id="" class='form-control'>
+		<option value="">Test1</option>
+		<option value="">Test2</option>
+		<option value="">Test3</option>
+		<option value="">Test4</option>
+	</select>
+	
+	<input type="checkbox"  class='form-control' />
+	<br />
+	<a href="#" class='form-control' >네이버</a>
+	<a href="#" class='form-control'>다음</a>
+	<br />
+	<br />
+	<br />
+	
+	
+	<input type="button" value="confirm" />
+	<input type="button" value="confirm" class="btn"/>
+	<input type="button" value="confirm" class="btn btn-default"/>
+	<input type="button" value="confirm" class="btn btn-success"/>
+	
+	<br /><br />
+	<input type="button" value="confirm" class="btn btn-primary"/>
+	<input type="button" value="confirm" class="btn btn-info"/>
+	<input type="button" value="confirm" class="btn btn-warning"/>
+	<input type="button" value="confirm" class="btn btn-danger"/>
+	
+	<br />
+	<br />
+	<br />
+	
+	<!-- btn-block : 버튼이 포함되어 있는 부모 요소만큼 꽉 채워서 렌더링 한다. -->
+	<input type="button" value="confirm" class="btn btn-primary btn-block"/>
+	
+	<input type="button" value="confirm" class="btn btn-default"/>
+	<input type="button" value="confirm" class="btn btn-default active"/>
+	<br /><br />
+	
+	<input type="button" value="confirm" class="btn btn-primary"/>
+	<input type="button" value="confirm" class="btn btn-primary active"/>
+	<br /><br />
+	
+	
+	<!-- btn 속성을 부여할때 role=button 속성을 같이 명시해준다 -->
+	<a href="#">네이버</a>	
+	<a href="#" class="btn btn-primary" role="button">네이버</a>
+	
+</form>
+	
+	
+	<br />	<br />	<br />	<br />	<br />	<br />	<br />	<br />	<br />	<br />	<br />	<br />	<br />	<br />	<br />	<br />	<br />
+	<br />
+	<br />
+	<br />	
+	
+<div id="main">
+	<h1>게시판</h1>
+	 
+	<table class="table table-striped" id="table1">
+		<tr>
+			<th>번호</th>
+			<th>제목</th>
+			<th>이름</th>
+			<th>날짜</th>
+			<th>읽음</th>
+		</tr>
+		<tr>
+			<th>5</th>
+			<th>게시판테스트</th>
+			<th>김민성</th>
+			<th>2022-05-10</th>
+			<th>22</th>
+		</tr>
+		<tr>
+			<th>4</th>
+			<th>게시판테스트</th>
+			<th>김태형</th>
+			<th>2022-05-09</th>
+			<th>12</th>
+		</tr>
+		<tr>
+			<th>3</th>
+			<th>게시판테스트</th>
+			<th>박민형</th>
+			<th>2022-05-08</th>
+			<th>14</th>
+		</tr>
+		<tr>
+			<th>2</th>
+			<th>게시판테스트</th>
+			<th>김이삭</th>
+			<th>2022-05-19</th>
+			<th>52</th>
+		</tr>
+		<tr>
+			<th>1</th>
+			<th>게시판테스트</th>
+			<th>김정용</th>
+			<th>2022-05-19</th>
+			<th>232</th>
+		</tr>
+	</table>
+	
+	<div id="btnSet">
+		<input type="button" value="글쓰기" class="btn btn-default" />
+		<input type="button" value="새로고침" class="btn btn-default" />
+	</div>
+</div>
+
+
+<br />
+
+<div id="main">
+	<h1>게시판 글쓰기</h1>
+	<form action="">
+		<table class="table table-bordered" id="tblAdd">
+			<tr>
+				<th>이름</th>
+				<th>
+					<input type="text" class="form-control" placeholder="이름을" 입력하세요="" />
+				</th>
+				<th>이름</th>
+				<th>
+					이름
+				</th>
+			</tr>
+		</table>
+	
+	</form>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br />	<br />	<br />	<br />	<br />	<br />	<br />	<br />	<br />	<br />	<br />	<br />	<br />	<br />	<br />	<br />	<br />
+	<br />
+	<br />
+	<br />	
+
+
+
+
+
+</body>
+</html>

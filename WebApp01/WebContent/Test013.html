@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Test013.html</title>
+</head>
+<body>
+
+<div>
+	<h1>테이블 열/행 병합 실습</h1>
+	<hr>
+	
+</div>
+
+<div>
+	<table border = "1">
+		<tr>
+			<td colspan = "2"> 강남구 </td>
+			<td colspan = "2"> 노원구 </td>
+		</tr>
+		<tr>
+			<td>역삼동</td>
+			<td>논현동</td>
+			<td>상계동</td>
+			<td>중계동</td>
+		</tr>
+	</table>
+	<br><br>
+	
+	<table border = "">
+		<tr>
+			<th colspan = "2"> 강남구 </th>
+			<th colspan = "2"> 노원구 </th>
+		</tr>
+		<tr>
+			<td>역삼동</td>
+			<td>논현동</td>
+			<td>상계동</td>
+			<td>중계동</td>
+		</tr>
+	</table>
+	
+	<br>
+	<br>
+	<br>
+	<br>
+	
+	<table border = "1">
+		<!-- 강남구에 청담동 추가 -->
+		<!-- 노원구에 하계동 추가 -->
+			<tr>
+				<th colspan = "3"> 강남구 </th>
+				<th colspan = "4"> 노원구 </th>
+			</tr>
+			<tr>
+				<td>역삼동</td>
+				<td>논현동</td>
+				<td>청담동</td>
+				<td>상계동</td>
+				<td>중계동</td>
+				<td>하계동</td>
+			</tr>
+	</table>
+	
+	<br>
+	<br>
+	<br>
+	<br>
+	
+	<table border = "2">
+		<tr>
+			<th colspan = "2">강남구</th>
+			<th colspan = "4">노원구</th>
+		</tr>
+		
+		<tr>
+			<td>역삼동</td>
+			<td>논현동</td>
+			<td>청담동</td>
+			<td>상계동</td>
+			<td>중계동</td>
+			<td>하계동</td>
+		</tr>
+	</table>
+	
+	<br>
+	<br>
+	<br>
+	<br>
+	
+	<table border = "4">
+		<tr>
+			<th rowspan = "2">강남구</th><td>역삼동</td>
+			
+		</tr>
+		
+		<tr>
+			<td>역삼동</td>
+		</tr>
+		<tr>
+			<th rowspan = "2">노원구</th><td>중계동</td>
+		</tr>
+		
+		<tr>
+			<td>상계동</td>
+		</tr>
+	
+	</table>
+	<br>
+	<br>
+	<br>
+	<table border = "3">
+		<tr>
+			<th rowspan = "2">노원구</th><td>상계동</td>
+			
+		</tr>
+		<tr>
+			<td>중계동</td>
+		</tr>
+		
+		<tr>
+			<th rowspan = "3">강남구</th><td>역삼동</td>
+		</tr>
+		<tr>
+			<td>논현동</td>
+		</tr>
+		<tr>
+			<td>청담동</td>
+		</tr>
+		
+		<tr>
+			<th rowspan = "4">은평구</th><td>녹번동</td>
+		</tr>
+		<tr>
+			<td>불광동</td>
+		</tr>
+		
+		<tr>
+			<td>홍제동</td>
+		</tr>
+		
+		<tr>
+			<td>역촌동</td>
+		</tr>
+		
+	
+	</table>
+	
+	
+</div>
+
+</body>
+</html>

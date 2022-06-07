@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Test030.html</title>
+<style type="text/css">
+
+	/* 나의 스타일.. 명령 프롬프트 */
+	*
+	{
+		background-color: white;
+		font-family: 나눔고딕코딩;
+		font-size: 20pt;
+		color: #ababab;
+		font-weight: bold;
+	}
+	h1
+	{
+		font-size: 40pt;
+		color: #ababab;
+		margin: 0%;
+	}
+	hr
+	{
+		background-color: #ababab;
+		height: 15px;
+	}
+	input.btn
+	{
+		background-color: black;
+		width: 250px;
+		text-align: center;
+	}
+	input.btn:hover
+	{
+			background-color: red;
+			color: white;
+	}
+	input.txtbox
+	{
+		 width: 100px;
+		 text-align: center;
+	}
+	input.txtbox:hover
+	{
+		background-color: blue;
+		color: white;
+	}
+</style>
+<script type="text/javascript">
+
+	var num = 0;
+
+	function actionChoice()
+	{
+		//alert("안녕");
+		var checkRadio = document.getElementsByName("radioGroup");
+		var count = 0;
+		for (var i = 0; i < checkRadio.length; i++)
+		{
+			if (checkRadio[i].checked)
+			{
+				//alert(i);
+				//alert(checkRadio[i].value);
+				count = checkRadio[i].value;
+			}
+		}
+		//alert(count);
+		return parseInt(count);
+	}
+	
+	function actionChoice2(checkBox)
+	{
+		var count = actionChoice();
+		
+		if (count == 0)
+		{
+			alert("사이즈를 먼저 선택하세요");
+			checkBox.checked = false;
+			return;
+		}
+		
+		
+		
+		
+		
+		if (checkBox.checked)
+		{
+			num++;			
+			alert(num);
+			alert(count);
+			if (num>count)
+			{	
+				alert("다채웠어~");
+				checkBox.checked = false;
+			}
+		}
+		else
+			num-=1;
+	
+		
+	}
+	
+	
+	
+</script>
+</head>
+<body>
+
+<div>
+	<h1> 자바 스크립트 활용 </h1>
+	<hr>
+</div>
+<div>
+	<h2>아이스크림 주문</h2>
+	
+	
+	<form onclick = "actionChoice()">
+		--- 사이즈 선택 --- <br><br>
+		
+		<input type = "radio" name = "radioGroup" id = "a1" value = "1">
+		<label for = "a1">싱글(1)</label>
+		<input type = "radio" name = "radioGroup" id = "b1" value = "2">
+		<label for = "b1">더블(2)</label>
+		<input type = "radio" name = "radioGroup" id = "c1" value = "3">
+		<label for = "c1">파인트(3)</label>
+		<input type = "radio" name = "radioGroup" id = "d1" value = "4">
+		<label for = "d1">쿼터(4)</label>
+		<input type = "radio" name = "radioGroup" id = "e1" value = "5">
+		<label for = "e1">패밀리(5)</label>
+		<input type = "radio" name = "radioGroup" id = "f1" value = "6">
+		<label for = "f1">하프갤런(6)</label>
+		<br><br>
+	</form>	
+	<form>
+		--- 종류 선택 --- <br><br>
+		<input type ="checkbox" name = "checkGroup" id = "a2" value = "엄마"  onclick = "actionChoice2(this)">
+		<label for = "a2">엄마는외계인</label>
+		<input type ="checkbox" name = "checkGroup" id = "b2" value = "레인"  onclick = "actionChoice2(this)">
+		<label for = "b2">레인보우샤베트</label>
+		<input type ="checkbox" name = "checkGroup" id = "c2" value = "민트"  onclick = "actionChoice2(this)">
+		<label for = "c2">민트초코</label>
+		<input type ="checkbox" name = "checkGroup" id = "d2" value = "바람"  onclick = "actionChoice2(this)">
+		<label for = "d2">바람과함께사라지다</label>
+		<br>
+		
+		<input type ="checkbox" name = "checkGroup" id = "e2" value = "뉴욕"  onclick = "actionChoice2(this)">
+		<label for = "e2">뉴욕치즈케이크</label>
+		<input type ="checkbox" name = "checkGroup" id = "f2" value = "사랑"  onclick = "actionChoice2(this)">
+		<label for = "f2">사랑에빠진딸기</label>
+		<input type ="checkbox" name = "checkGroup" id = "g2" value = "초코"  onclick = "actionChoice2(this)">
+		<label for = "g2">초코나무숲</label>
+		<input type ="checkbox" name = "checkGroup" id = "h2" value = "봉봉"  onclick = "actionChoice2(this)">
+		<label for = "h2">아몬드봉봉</label>
+		<br>
+		
+		<input type ="checkbox" name = "checkGroup" id = "i2" value = "바닐"  onclick = "actionChoice2(this)">
+		<label for = "i2">바닐라</label>
+		<input type ="checkbox" name = "checkGroup" id = "j2" value = "쿠키"  onclick = "actionChoice2(this)">
+		<label for = "j2">쿠키앤크림</label>
+		<input type ="checkbox" name = "checkGroup" id = "k2" value = "월넛"  onclick = "actionChoice2(this)">
+		<label for = "k2">월넛</label>
+		<input type ="checkbox" name = "checkGroup" id = "l2" value = "요거"  onclick = "actionChoice2(this)">
+		<label for = "l2">31요거트</label>
+		
+	</form>
+</div>
+</body>
+</html>

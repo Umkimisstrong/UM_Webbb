@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Test014.html</title>
+<script type="text/javascript">
+<!--
+	// 자바스크립트 코드 작성
+	
+	// msg 변수 → 함수 밖에 선언 → 모든 함수에서 접근 가능한 전역 변수
+	//var msg = "2022년 4월을 시작하는 길목에서...";
+	msg = "2022년 4월을 시작하는 길목에서...";
+	function buttonOnclick1()
+	{
+		//alert("첫 번째 버튼 클릭 확인~!!");
+		
+		
+		alert(msg);
+		// 『var』 키워드 포함 → name 변수 → 함수 내부에 선언 → 지역 변수
+		var name = "김상기";
+
+		// 『var』 키워드 생략 → name 변수	→ 함수 내부에 선언 → 상황에따라 다름
+		
+		// 따라서 변수를 함수 내부에서 선언할 때는 var 을 명시해주자
+		// name = "이호석";
+		document.write("이름 : " + name);
+	}
+	
+	function buttonOnclick2()
+	{
+		//alert("두 번째 버튼 클릭 확인~!!");
+		
+		alert(msg);
+		
+		document.write("이름 : " + name);
+	}
+//-->
+</script>
+
+<noscript>
+	자바스크립트가 사용되지 못할 경우 표현되는 영역
+</noscript>
+
+</head>
+<body>
+<input type="button" id = "btn01" value="Button1" onclick = "buttonOnclick1()"><br>
+<input type="button" id = "btn02" value="Button2" onclick = "buttonOnclick2()">
+
+</body>
+</html>

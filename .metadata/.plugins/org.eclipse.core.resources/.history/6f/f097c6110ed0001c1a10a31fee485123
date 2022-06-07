@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>
+AjaxTest01.html</title>
+<script type="text/javascript">
+	function loadXMLDocs()
+	{
+		//alert("확인");
+		var xmlHttp;
+		
+		// 클라이언트 브라우저에 따른 분기
+		// 클라이언트 측에서 자신의 브라우저가 XMLHttpRequest를
+		// 지원하고 잇는상황이라면
+		if (window.XMLHttpRequest)
+		{
+			//alert("지원");
+			xmlHttp = new XMLHttpRequest();
+		}
+		else
+		{
+			//alert("지원안함");
+			xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+			
+		}
+		
+		// 객체를 생성하는 방법의 차이만 있을뿐
+		// 여기까지 수행하면 ※ XMLHttp Request 객체를 생성한것임
+		
+		// 『xmlHttp  : XMLHttpRequest 객체
+		// 서버로부터 응답이 오면 
+		// readystatechange 이벤트 발생
+		// 「onreadystatechange」 : readystatechange 이벤트가 발생했을 때
+		// 동작할 수 있도록 이벤트 핸들러를 등록하는 과정.
+		// 즉, 이와같은 이벤트가 발생하게 되면... 아래의 내용처럼 동작해라~!!!
+		
+		
+		xmlHttp.onreadystatechange = function()
+		{
+			// 응답이 올 때 마다
+			// readyState 가 그 상황에서의 XMLHttpRequest 상태를 저장하게 된다.
+			// 즉, readyState 는 XMLHttpRequest 객체의 property 이다.
+			// ==> readystatechange 이벤트는
+			//     readyState 가 변경될 때 마다 발생하게 된다.
+			
+			// ※ 「XMLHttpRequest」의 『readyState』는 0에서 4까지 순차적으로 변화한다.
+			//    0 → 요청이 초기화 되지 않음.
+			//    1 → 서버 연결이 이루어지지 않음.
+			//    2 → 요청이 수신됨.
+			//    3 → 요청을 처리중.
+			//    4 → 요청의 처리가 종료되고, 응답이 준비됨.
+			
+			// 서버로부터 응답을 받게되면..
+			if (xmlHttp.readyState==4)
+			{
+				// ※ 『XMLHttpRequest』 의 status 는 『HTTP Status』 코드를 의미한다.
+				//  200  올바른 응답
+				//  40x  클라이언트 측 에러(404 페이지 찾을 수 없음)
+				//  50x  서버 측 에러(JAVA에러)
+				if (xmlHttp.status==200)
+				{
+					// 이 구문을 통해 서버로부터 응답을 정상적으로 받았을 때
+					// 그 응답을 가져와 DOM 을 업데이트 하겠다는 의미
+					// 응답의 속성에는 두 가지가 있는데,
+					// 『responseTest』 는 텍스트 형식의 응답일 경우 사용하게 되고.
+					// 『responseXML』 은 응답이 XML 형식일 경우 사용하게 된다.
+					document.getElementById("myDiv").innerHTML = xmlHttp.responseText;
+				}
+			}
+			
+			
+		};
+		
+		// 『XMLHttpRequest』 의 『open("페이지요청방식"), "URL", async』는
+		// XMLHttpRequest 객체를 필요한 값으로 초기화 하는데 사용하는 메소드이다.
+		// GET 방식이 아닌 POST 방식으로 요청하기 위해서는
+		//  xmlHttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+		//  xmlHttp.send(input1=value1&input2=value2);
+		// 와 같이 헤더를 추가해 주어야 한다.
+		xmlHttp.open("GET", "ajaxTarget.txt", true);
+		xmlHttp.send("");
+		
+	}
+</script>
+</head>
+<body>
+
+<div id="myDiv">
+	<h1>Ajax를 활용하여 이 텍스트를 바꾸어보자</h1>
+</div>
+
+
+<button type="button" onclick="loadXMLDocs()">Content 바꾸기</button>
+
+</body>
+</html>

@@ -1,0 +1,7 @@
+/**
+ * ajax.js 
+ */
+
+
+var ajax = null;
+

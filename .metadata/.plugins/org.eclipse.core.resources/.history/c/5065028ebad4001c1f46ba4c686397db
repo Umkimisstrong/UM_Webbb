@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>BootEx01.html</title>
+<!-- 부트스트랩 적용 이전과 이후 내용을 비교 확인  -->
+<!-- 각 엘리먼트들이 갖는 시각적인 효과 및 여백 정책  -->
+
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+<script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+<!-- 부트스트랩이 적용되면 여백 없어짐 -->
+<h1>제목입니다.</h1>
+
+평범한 텍스트입니다.
+
+<h1> h1. Bootstrap heading <small>Secondary text</small>   </h1>
+<h2> h1. Bootstrap heading <small>Secondary text</small>   </h2>
+<h3> h1. Bootstrap heading <small>Secondary text</small>   </h3>
+<h4> h1. Bootstrap heading <small>Secondary text</small>   </h4>
+<h5> h1. Bootstrap heading <small>Secondary text</small>   </h5>
+<h6> h1. Bootstrap heading <small>Secondary text</small>   </h6>
+</body>
+</html>
+
+우리는 <mark>강조할 텍스트</mark>에 mark 태그를 사용할 수 있다. <br /><br />
+이 텍스트 라인은 해당 텍스트에 <s>시각적인 효과</s>를 부여하기 위해 사용되고 있다. 
+
+</p>

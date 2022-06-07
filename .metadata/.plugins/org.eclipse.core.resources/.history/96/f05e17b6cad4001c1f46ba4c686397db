@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>BootEx07.html</title>
+
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+<script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+<!-- 
+	※ 그리드시스템 → 영역 분할 ▶ 기본 12 분할
+	
+	   사용할 클래스 『.col-xs』 『.col-sm』 『.col-md』 『.col-lg』
+ -->
+
+
+
+
+
+
+
+
+</body>
+</html>

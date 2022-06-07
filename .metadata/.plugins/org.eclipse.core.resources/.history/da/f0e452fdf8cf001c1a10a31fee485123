@@ -1,0 +1,86 @@
+<%@ page contentType="text/html; charset=UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%
+	request.setCharacterEncoding("UTF-8");
+	String cp = request.getContextPath();
+%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>AjaxTest02.jsp</title>
+<link rel="stylesheet" type="text/css" href="<%=cp%>/css/main.css">
+<style type="text/css">
+	.short
+	{
+		width: 50px;
+		text-align: right;
+	}
+</style>
+</head>
+<script type="text/javascript" src="<%=cp %>/js/ajax.js"></script>
+<script type="text/javascript">
+	function sum()
+	{
+		// 테스트
+		alert("함수 호출 확인");
+		
+		// 데이터 수집
+		var n1 = document.getElementById("num1").value;
+		var n2 = document.getElementById("num2").value;
+		
+		// URL 구성
+		var url = "test02.do?n1=" + n1 + "&n2=" + n2;
+		
+		// XMLHttpRequest 객체 생성(→ AJAX 객체)
+		
+		ajax = createAjax();		// ajax.js 파일에 있는것
+		
+		
+		
+	}
+	
+</script>
+
+
+
+<body>
+
+<div>
+	<h1>AJAX 기본 실습</h1>
+	<hr />
+</div>
+
+<input type="text" id="num1" class="short" />
++
+<input type="text" id="num2" class="short" />
+<input type="button" value="="  onclick="sum()"  />
+<input type="text" id="result" class="short" />
+
+<br /><br />
+
+<h2>같은 페이지에 있는 기타 다른 요소들</h2>
+
+<input type="text" />
+<br />
+
+
+<input type="checkbox" name="check" value="check1" />체크1
+<input type="checkbox" name="check" value="check2" />체크2
+<br />
+
+<input type="radio" name="rdo" value="rdo1" />라디오1
+<input type="radio" name="rdo" value="rdo2" />라디오2
+<br />
+
+<select name="" id="sel">
+	<option value="1">선택1</option>
+	<option value="2">선택2</option>
+	<option value="3">선택3</option>
+</select>
+	
+
+
+
+</body>
+</html>

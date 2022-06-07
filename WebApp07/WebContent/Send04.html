@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Send04.html</title>
+<link rel="stylesheet" type="text/css" href="css/main.css">
+<style type="text/css">
+	.msg {color: red; font-size: 10pt; display: none;}
+</style>
+<script type="text/javascript">
+
+/* 	function checkNull()
+	{
+		alert("1");
+		var form = document.loginForm;
+		if (form.userId.value == "")
+		{
+			alert("아이디를 입력해주세요");
+			form.userId.focus();
+			return false;
+		}
+		else if (form.userPwd.value == "")
+		{
+			alert("비밀번호를 입력해주세요");
+			form.userPwd.focus();
+			return false;
+		}
+		else if (form.userName.value == "")
+		{
+			alert("이름을 입력해주세요");
+			form.userName.focus();
+			return false;
+		}
+		else if (form.userTel.value == "")
+		{
+			alert("전화번호를 입력해주세요");
+			form.userTel.focus();
+			return false;
+		}
+		
+		form.submit();
+		
+	}  */
+	
+	function formCheck()
+	{
+		//return true;
+		// 문서의 내용 점검 → 통과 → return true; submit 액션 처리로 제어권 넘김
+		// 문서의 내용 점검 → 반려 → return false; submit 액션 처리로 제어권을 넘기지 않고 현재 페이지에 잔류..
+		//return true;
+		var userId = document.getElementById("id");
+		var userPwd = document.getElementById("pwd");
+		var userName = document.getElementById("name");
+		var userTel = document.getElementById("tel");
+		
+		var idMsg = document.getElementById("idMsg");
+		var pwdMsg = document.getElementById("pwdMsg");
+		var nameMsg = document.getElementById("nameMsg");
+		var telMsg = document.getElementById("telMsg");
+		
+		idMsg.style.display = "none";
+		pwdMsg.style.display = "none";
+		nameMsg.style.display = "none";
+		telMsg.style.display = "none";
+		
+		// 다 독립적은 if로 처리해야됌
+		if (userId.value == "")
+		{
+			//alert("아이디가 입력안됨");
+			idMsg.style.display = "inline";
+			userId.focus();
+			return false;
+		}
+		
+		if(userPwd.value == "")
+		{
+			//alert("비밀번호가 입력안됨");
+			pwdMsg.style.display = "inline";
+			userPwd.focus();
+			
+			return false;
+			
+		}
+		if(userName.value == "")
+		{
+			//alert("이름이 입력안됨");
+			nameMsg.style.display = "inline";
+			userName.focus();
+			return false;
+			
+		}
+		if (userTel.value == "")
+		{
+			//alert("전화번호가 입력안됨");
+			telMsg.style.display = "inline";
+			userTel.focus();
+			return false;
+		}
+		return true;
+		/*
+		 문제발생(발견) return false;
+		 문제가 발생하지 않음(발견되지 않음) return true;
+		*/
+	}
+</script>
+</head>
+<body >
+
+<div>
+	<h1>데이터 송수신 실습 04</h1>
+	<hr>
+</div>
+
+<!-- ○ 데이터 송수신 실습 04
+         - 회원 가입과 관련한 기본 정보를 입력받는 html 페이지를 작성
+         - 서버로 입력된 데이터를 전송하기 전에
+           (즉, 클라이언트 측에서 작성한 내용을 서버에 제출하기 전에)
+           입력 데이터에 대한 기본적인 검사 과정을 자바스크립트를 활용하여
+           추가할 수 있도록 한다.
+           
+           '아이디'(*)   [ textbox ]
+           '패스워드'(*) [ password]
+           '이름'(*)     [ textbox ]
+           ' 전화번호'(*)[ textbox ]
+           
+           성별    ● 여자  ○ 남자
+           지역          [ 서울 ▼ ]
+                           대전
+                           대구
+                           광주
+           수강과목       □자바기초 □오라클중급 □JDBC심화 □JSP활용
+           <회원가입> <취소>
+           
+           - 필수 입력사항(*)을 포함한 입력내용을 구성한 후 회원가입 버튼 클릭 시
+             회원 입력 정보들의 내용을 출력하는 JSP 페이지(Receive04.jsp)를 구성하여
+             데이터를 전달할 수 있도록 한다.
+             
+           - 사용자의 최초 요청 주소는
+             http://localhost:8090/WebApp07/Send04.html 로 한다.
+      ○ Send04.html / Receive04.jsp        -->
+<div>
+<!-- 	<form name="loginForm" method="post" action="Receive04.jsp" onsubmit="checkNull()"> -->
+	<form name="loginForm" method="post" action="Receive04.jsp" onsubmit="return formCheck()">
+		<table border="1">
+			<tr>
+				<th>
+					아이디(*)
+				</th>
+				<th>
+					<input type="text" name="userId" class="txtbox" style="width:40%" id="id">
+					<input type="text" class="msg" id="idMsg" value="아이디를 입력하세요" readonly="readonly">
+				</th>
+			</tr>
+			<tr>
+				<th>
+					패스워드(*)
+				</th>
+				<th>
+					<input type="password" name="userPwd" class="txtbox" style="width:40%" id="pwd">
+					<input type="text" class="msg" id="pwdMsg" value="비밀번호를 입력하세요" readonly="readonly">
+				</th>
+			</tr>
+			<tr>
+				<th>
+					이름(*)
+				</th>
+				<th>
+					<input type="text" name="userName" class="txtbox" style="width:40%" id="name">
+					<input type="text" class="msg" id="nameMsg" value="이름을 입력하세요" readonly="readonly">
+				</th>
+			</tr>
+			<tr>
+				<th>
+					전화번호(*)
+				</th>
+				<th>
+					<input type="text" name="userTel" class="txtbox" style="width:40%" id="tel">
+					<input type="text" class="msg" id="telMsg" value="전화번호를 입력하세요" readonly="readonly"> 
+				</th>
+			</tr>
+			<tr>
+				<th>
+					성별
+				</th>
+				<th>
+					<input type="radio" name="userGender" value="F" > 여자
+					<input type="radio" name="userGender" value="M" > 남자
+				</th>
+			</tr>
+			<tr>
+				<th>
+					지역
+				</th>
+				<th>
+					<select name="userCity" style="width: 150px">
+						<option value="seoul">서울</option>
+						<option value="daejeon">대전</option>
+						<option value="daegu">대구</option>
+						<option value="gwangju">광주</option>
+					</select>
+				</th>
+			</tr>
+			<tr>
+				<th>
+					수강과목
+				</th>
+				<th>
+					<input type="checkbox" name="major" value ="java"> 자바기초
+					<input type="checkbox" name="major" value ="oracle"> 오라클중급
+					<input type="checkbox" name="major" value ="jdbc"> JDBC심화
+					<input type="checkbox" name="major" value ="jsp"> JSP활용
+				</th>
+				
+			</tr>
+		</table>
+		<br>
+			<!-- submit 타입으로 하는 방법 ①  -->
+			<!-- <input type="button" value="회원가입" onclick="checkNull()" style="width: 150px; height: 50px"> -->
+			<input type="submit" value="회원가입" style="width: 150px; height: 50px">
+			<button type="reset" style="width: 150px; height: 50px">취소</button>
+	</form>
+</div>             
+             
+             
+</body>
+</html>

@@ -1,0 +1,35 @@
+@charset "UTF-8";
+
+p
+{
+	color: tomato;
+}
+
+h3
+{
+	/* 누런색 */
+	color: #a47d64;
+}
+
+h2
+{	
+	/* 밝은 회색 */
+	color: #ababab;
+}
+
+h1
+{	
+	/* 주황색 */
+	color: #ff8040;
+}
+
+span
+{
+	color: #408080;
+}
+
+hr
+{
+	/* 푸른색 */
+	color: #047b88;
+}

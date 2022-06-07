@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>BootEx08.html</title>
+
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+<script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+
+<!-- 추가 check!! -->
+<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.css">
+
+</head>
+<body>
+
+<div>
+	<h1>Glyphicons</h1>
+	<hr />
+</div>
+
+<div>
+	아이콘 : <span class="glyphicon glyphicon-heart" style="width: 200px;"></span> 
+	아이콘 : <span class="glyphicon glyphicon-heart" style="height: 200px;"></span> 
+</div>
+<br /><br />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+
+
+
+
+
+
+
+
+
+</body>
+</html>

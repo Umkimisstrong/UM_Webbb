@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Test033.html</title>
+
+<style type="text/css">
+
+	/* 나의 스타일.. 명령 프롬프트 */
+	*
+	{
+		background-color: white;
+		font-family: 나눔고딕코딩;
+		font-size: 20pt;
+		color: #ababab;
+		font-weight: bold;
+	}
+	h1
+	{
+		font-size: 40pt;
+		color: #ababab;
+		margin: 0%;
+	}
+	hr
+	{
+		background-color: #ababab;
+		height: 15px;
+	}
+	input.btn
+	{
+		width: 150.5px;
+		background-color: black;
+		text-align: center;
+	}
+	input.btn:hover
+	{
+			background-color: tomato;
+			color: white;
+	}
+	input.txtbox
+	{
+		 width: 200px;
+		 text-align: center;
+	}
+	input.txtbox:hover
+	{
+		background-color: skyblue;
+		color: white;
+	}
+	select.txtbox
+	{
+		width: 208px; text-align: center;
+	}
+</style>
+<script type="text/javascript">
+
+	function myAddr(addr)
+	{
+		// 확인
+		//alert("함수 호출 확인 ~!!")
+		//alert(addr);
+		//document.getElementById("addr1").value="1234";
+		
+		// 윈도우함수 【.opener 】 : 해당 문서를 연 주체 
+		// Test032 의 input 엘리먼트에 넘기는 구문
+		//window.opener.document.getElementById("addr1").value = "1234";
+		window.opener.document.getElementById("addr1").value = addr;
+		
+		// Test032 의 span 엘리먼트에 넘기는 구문
+		// CR, FF 용(크롬 등)								▼
+		 window.opener.document.getElementById("txt1").innerHTML = addr;
+		
+		// IE(인터넷 익스플로러용)							▼
+		//window.opener.document.getElementById("txt1").innerText = addr;
+		
+		window.close();
+	}	
+
+</script>
+</head>
+
+<body>
+
+<div>
+	<form>
+		주소 검색
+		<input>
+		<input type = "button" value = "검색">
+		<br><br>
+		
+		<!-- a태그는 onclick 속성 부여 x  자체적으로 링크생성 -->
+		
+		<!--<a href = "Test032.html">서울 마포구 서교로 1가 (1~110번지)</a><br> -->
+		<!-- <a href = "myAddr()">서울 마포구 서교로 1가 (1~110번지)</a><br> -->
+		
+		<!-- a태그 href속성으로 함수호출하고싶으면 : 접두어로 'javascript: 를 붙여주자'
+		     myAddr()함수에 매개변수로 주소값 을 문자열화 해서 전달.. -->
+		
+		<a href = "javascript: myAddr('04044 서울 마포구 서교로 1가')">서울 마포구 서교로 1가 (1~110번지)</a><br>
+		<a href = "javascript: myAddr('04045 서울 마포구 서교로 2가')">서울 마포구 서교로 2가 (111~123번지)</a><br>
+		<a href = "javascript: myAddr('04046 서울 마포구 서교로 3가')">서울 마포구 서교로 3가 (124~131번지)</a><br>
+		<a href = "javascript: myAddr('04047 서울 마포구 서교로 4가')">서울 마포구 서교로 4가 (132~184번지)</a><br>
+		<a href = "javascript: myAddr('04048 서울 마포구 서교로 5가')">서울 마포구 서교로 5가 (185~192번지)</a><br>
+		<a href = "javascript: myAddr('04049 서울 마포구 서교로 6가')">서울 마포구 서교로 6가 (193~215번지)</a><br>
+		
+	</form>
+
+</div>
+
+
+
+</body>
+</html>

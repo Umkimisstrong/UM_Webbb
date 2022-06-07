@@ -1,0 +1,55 @@
+/*
+  Test04.java
+*/
+package com.test.ajax;
+
+import java.io.IOException;
+import java.util.ArrayList;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class Test04 extends HttpServlet
+{
+   private static final long serialVersionUID = 1L;
+
+   @Override
+   protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
+   {
+      doGetPost(request, response);
+   }
+
+   @Override
+   protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
+   {
+      doGetPost(request, response);
+   }
+   
+   protected void doGetPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
+   {
+	   // 서블릿 관련 코딩
+	   // 한글 깨짐 방지 처리
+	   request.setCharacterEncoding("UTF-8");
+	   
+	   // 데이터 수신(동 이름 넘어온데이터)
+	   String addr = request.getParameter("addr");
+	   
+	   // ※ 여기서도 앞에서와 마찬가지로 우편번호 데이터베이스 가 있다고 가정하고..
+	   //    대신 직접 자료구조 구성
+	   
+	   ArrayList<ZipCodeDTO> addrList = new ArrayList<ZipCodeDTO>();
+	   
+	   if (addr.indexOf("서교") > -1 )
+	   {
+		   
+	   }
+	   
+	   
+	   
+	   
+	   
+   }
+}

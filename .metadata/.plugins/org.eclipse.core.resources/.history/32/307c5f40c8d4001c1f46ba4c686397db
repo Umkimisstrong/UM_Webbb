@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>BootEx06.html</title>
+</head>
+<body>
+
+<div>
+	<h1>기본 폼 구성하기</h1>
+	<hr />
+</div>
+
+
+<div id="content">
+
+</div>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

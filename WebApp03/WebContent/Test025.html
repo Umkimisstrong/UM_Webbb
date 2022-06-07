@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Test025.html</title>
+<style type="text/css">
+
+	/* 나의 스타일.. 명령 프롬프트 */
+	*
+	{
+		font-family: 나눔고딕코딩;
+		font-size: 20pt;
+		color: #ababab;
+		font-weight: bold;
+	}
+</style>
+<script type="text/javascript">
+
+	function calendar()
+	{
+		var year = parseInt(document.getElementById("txtYear").value);
+		var month = parseInt(document.getElementById("txtMonth").value);
+		var nalsu = 0;
+		var months = 0;
+		var date = "";
+		var arr = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+		
+		if((year%4 == 0 && year%100 !=0) || year%400 == 0 )
+		{
+			arr[1] = 29;
+		}
+		
+		for (var i = 0; i < month-1; i++)
+		{
+			months += arr[i];	
+		}			
+		
+		nalsu = ((year-1) * 365)+parseInt((year-1)/4)-parseInt((year-1)/100)+parseInt((year-1)/400) + months+1;
+		alert(nalsu);
+		var count = nalsu%7;
+		
+		/*
+		 일 월 화 수 목 금 토 
+		     1  2  3  4  5  6
+		  7
+		 */
+		var tableNode = document.getElementById("calendarTbl");  
+		var trNode = document.createElement("tr");
+		var k = 1;
+		
+		for (var i = 0; i < count; i++)
+		{	
+			trNode.appendChild(createTdNode(" "));
+		}
+		
+		for (var i = 0; i < arr[month-1]; i++)
+		{
+			trNode.appendChild(createTdNode(k));
+			if ((k+count)%7 == 0)
+			{
+				tableNode.appendChild(trNode);	
+				trNode = document.createElement("tr");
+			}
+			tableNode.appendChild(trNode);
+			k++;
+		}
+		
+		
+		// nalsu + 끝나는날 : 
+		var end = (nalsu + arr[month-1])%7;
+		alert(end);
+		
+		for (var i = 0; i < 7-end; i++)
+		{
+			if (end == 0)
+				break;
+			
+			trNode.appendChild(createTdNode(" "));
+			tableNode.appendChild(trNode);
+		}
+	}// end of calendar()     
+	
+	function createTdNode(val)
+	{
+		var textNode = document.createTextNode(val);
+		var thNode = document.createElement("th");
+		thNode.appendChild(textNode);
+		return thNode;
+	}// end of createTdNode()
+
+
+</script>
+
+</head>
+
+<body>
+
+<div>
+	<h1>테이블 동적 생성으로 만년달력 그리기 이건 내가했지요</h1>
+	<hr>
+</div>
+
+<div>
+	<form>
+		<input type = "text" id = "txtYear" class = "txt" style = "width: 67px"> 년
+		<input type = "text" id = "txtMonth" class = "txt" style = "width: 67px"> 월
+		<br><br>
+		
+		<button type = "button" class = "btn" style = "width: 120px" onclick = "calendar()">달력</button>
+		<a href = "http://localhost:8090/WebApp03/Test025.html" type = "button">◀RESET</a>
+		<br><br>
+		
+		<table border = "1" id = "calendarTbl">
+			<colgroup>
+            <col style=" background-color: #f29886; color: red;">
+            <col span="5">
+            <col style=" background-color: #d9e6fd; color: black;">
+         	</colgroup>
+			<tr>
+				<th>일</th>	<th>월</th>	<th>화</th>	<th>수</th>	<th>목</th>	<th>금</th>	<th>토</th>
+			</tr>
+			
+			
+		</table>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</form>
+</div>
+</body>
+</html>

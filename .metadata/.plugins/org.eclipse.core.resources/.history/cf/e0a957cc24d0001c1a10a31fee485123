@@ -1,0 +1,12 @@
+/*
+  ZipCodeDTO.java
+*/
+
+package com.test.ajax;
+
+public class ZipCodeDTO
+{
+	// 주요 속성 구성
+	private String zipCode;
+	private String address;
+}

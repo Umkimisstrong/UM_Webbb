@@ -1,0 +1,50 @@
+@charset "UTF-8";
+
+*
+{
+	font-family: 나눔고딕코딩;
+	color: #ababab;
+}
+body, p, div, span, input, table, th, td, select
+{
+	font-size: 18px;
+	
+}
+.control
+{
+	border: 1px solid grey;
+	border-radius: 3px;
+}
+
+.table
+{
+	border-collapse: collapse;
+	width: 100%;
+}
+
+.table th, .table td
+{
+	border: 1px solid grey;
+	border-left: 0px;
+	border-right: 0px;
+	padding: 3px;
+	line-height: 150%;	
+}
+
+.table th
+{
+	font-weight: bold;
+	background-color: #EEE;
+}
+
+.btn
+{
+	font-weight: bold;
+	
+}
+
+.btn:hover
+{
+	color: white;
+	background-color: tomato;
+}

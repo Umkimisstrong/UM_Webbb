@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JsonTest08.html</title>
+<script type="text/javascript">
+	var myJsonObject8 =
+	{
+		"test" :
+			[
+				"ccc", "ddd"
+			]
+		,"exam" : 
+			[
+				"kkk", "ppp"
+			]
+	}
+	</script>
+</head>
+<body>
+
+
+<input type="button" value="click1" onclick="alert(myJsonObject8)" />
+<!-- [object Object] -->
+<input type="button" value="click2" onclick="alert(typeof myJsonObject8)" />
+<!-- object -->
+<input type="button" value="click3" onclick="alert(myJsonObject8.test)" />
+<!-- ccc,ddd -->
+<input type="button" value="click4" onclick="alert(typeof myJsonObject8.test)" />
+<!-- object -->
+<input type="button" value="click5" onclick="alert(myJsonObject8.test[0])" />
+<!-- ccc -->
+<input type="button" value="click6" onclick="alert(typeof myJsonObject8.test[0])" />
+<!-- string -->
+
+
+<input type="button" value="click7" onclick="alert(myJsonObject8.[0][0])" />
+<!-- X -->
+<input type="button" value="click8" onclick="alert(typeof myJsonObject8.[1][1])" />
+<!-- X -->
+
+</body>
+</html>

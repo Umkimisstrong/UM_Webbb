@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Test018.html</title>
+<style type="text/css">
+	*
+	{
+		font-family: 고딕;
+		font-weight: bold;
+		font-size: 15px;
+		background-color: orange;
+	}
+	hr
+	{
+		background-color: black;
+		height: 15px;
+	}
+	hr.t_hr
+	{
+		background-color: red;
+		height: 12px;
+	}
+	table
+	{
+		border: 3px solid white;
+		border-spacing: 5px;
+	}
+	td
+	{
+		border: 3px solid white;
+	}
+	
+	th
+	{
+		border: 3px solid white;
+		width : 100px;
+	}
+	input.txtBox
+	{
+		border: 3px solid white;
+		text-align: center;
+		width : 100px;
+	}
+	input.btn
+	{
+		background-color: blue;
+		color: white;
+		font-weight: bold;
+		font-size: 20px;
+		border: 3px solid black;
+		width : 250px;
+	}
+</style>
+
+<script type="text/javascript">
+	
+	function resultAvg()
+	{	
+		/*
+		alert(document.getElementById("kor").value);
+		alert(document.getElementById("eng").value);
+		alert(document.getElementById("mat").value);
+		*/
+		var kor = parseInt(document.getElementById("kor").value);
+		var eng = parseInt(document.getElementById("eng").value);
+		var mat = parseInt(document.getElementById("mat").value);
+		
+		var avg = Math.round((kor+eng+mat)/3);
+		//alert(avg);
+		
+		document.getElementById("avg").value = avg;
+		var result = "";
+		if (avg>=60 && kor >= 40 && eng >=40 && mat >= 40 )
+		{
+			//alert("합격");
+			result = "합격";
+		}
+		else if(avg>= 60 && (kor<40 || eng<40 || mat<40) )
+		{
+			//alert("과락");
+			result = "과락";
+		}
+		else if(avg<60)
+		{
+			//alert("불합격");
+			result = "불합격";
+		}
+		document.getElementById("eval").value = result;
+	}
+	
+</script>
+
+</head>
+<body>
+
+<div>
+	<h1>자바스크립트 활용</h1>
+	<hr>
+</div>
+
+<!--
+	사용자로부터 이름, 국어점수, 영어점수, 수학점수를 입력받아
+	평균점수와 판정결과를 출력하는 페이지를 구송한다.
+	판정결과는 합격, 과락, 불합격 중 하나로 처리하다.
+	
+	합격은 모든 과목은 점수가 40점 이상이면서 평균 60점 이상인 경우
+	과락은 평균이 60점 이상이지만 한 과목이라도 과목 점수가 40점 미만의 과목이 존재하는 경우
+	불합격은 평균이 60점 미만인 경우로 처리한다.
+	
+	HTML, CSS, Javascript 활용
+	
+	페이지 레이아웃 
+	-----------------------------------------------------
+	이름		[		]
+	국어점수	[		]
+	영어점수	[		]
+	수학점수	[		]
+	
+	< 처리결과확인 >
+	
+	 평균	 판정결과
+	 [	]	 [	    ]
+	 
+	-----------------------------------------------------
+	
+ -->
+
+<div>
+	<form>
+		<table> 
+			<tr>
+				<th>
+					이름
+				</th>
+				<td>
+					<input type = "text" class = "txtBox">
+				</td>
+			</tr>
+			<tr>
+				<th>
+					국어점수
+				</th>
+				<td>
+					<input type = "text" class = "txtBox" id = "kor">
+				</td>
+			</tr>
+			<tr>
+				<th>
+					영어점수
+				</th>
+				<td>
+					<input type = "text" class = "txtBox" id = "eng">
+				</td>
+			</tr>
+			<tr>
+				<th>
+					수학점수
+				</th>
+				<td>
+					<input type = "text" class = "txtBox" id = "mat">
+				</td>
+			</tr>
+			
+			<tr>
+				<th colspan = "2">
+					<input type = "button" class = "btn" value = "< 처리결과확인 >" onclick = "resultAvg()">
+					<hr class = "t_hr">
+				</th>
+			</tr>
+			
+			<tr>
+				<th>평균</th>
+				<th>판정결과</th>
+				
+			</tr>
+			<tr>
+				<td>
+				<input type = "text" class = "txtBox" id = "avg" disabled = "disabled">
+				</td>
+				<td>
+				<input type = "text" class = "txtBox" id = "eval" disabled = "disabled">
+				</td>
+			</tr>				
+		</table>
+	</form>
+	
+</div>
+
+</body>
+</html>

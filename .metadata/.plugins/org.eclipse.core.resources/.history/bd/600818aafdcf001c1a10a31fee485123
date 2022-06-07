@@ -1,0 +1,8 @@
+<%
+	int n1 = Integer.parseInt(request.getParameter("n1"));
+	int n2 = Integer.parseInt(request.getParameter("n2"));
+	
+	int result = n1 + n2;
+	
+
+%>

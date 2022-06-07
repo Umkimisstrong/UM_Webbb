@@ -1,0 +1,14 @@
+00. WebApp20_scott.sql
+
+01. DBConn.java
+02. BoardDTO.java
+03. BoardDAO.java
+04. MyUtil.java
+
+05. List.jsp
+06. Created.jsp
+07. Created_ok.jsp
+08. Article.jsp
+09. Updated.jsp
+10. Updated_ok.jsp
+11. Delete.jsp

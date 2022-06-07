@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Test017.html</title>
+<style>
+	*
+	{
+		background-color: grey;
+		font-style: italic;
+		font-family: 나눔고딕코딩;
+		color: orange;
+		font-weight: bold;
+	}
+	input.txtNum
+	{
+		background-color: red;
+		font-weight: bold;
+		color: black;
+	}
+	input.txtNum:hover
+	{
+		background-color: white;
+		font-weight: bold;
+		color: black;
+	}
+	input.btn
+	{
+		background-color: black;
+		font-weight: bold;
+		color: yellow;
+	}
+	input.btn:hover
+	{
+		background-color: white;
+		color: black;
+	}
+	input.btn:action
+	{
+		background-color: blue;
+		color: white;
+	}
+	
+	
+</style>
+<script type="text/javascript">
+
+	function calMoney() 
+	{
+			//alert(document.getElementById("money").value);
+			var money = parseInt(document.getElementById("money").value);
+			//alert(money + 1); 연산가능
+			if (money < 10)
+			{
+				alert("금액은 10 ~ 990 사이의 수만 입력 가능합니다. 『취소』 후 다시 실행하세요");
+				return;
+			}
+			else if (money > 990)
+			{
+				alert("금액은 10 ~ 990 사이의 수만 입력 가능합니다. 『취소』 후 다시 실행하세요");
+				return;
+			}
+			var tot = money; //총액
+			document.getElementById("tot").value = tot;
+			
+			var obaek = parseInt(money / 500);
+			// alert(obaek); 50으로 나눈 몫 반환
+			document.getElementById("obaek").value = obaek;
+			
+			//alert(money-(obaek * 500));
+			var baek = parseInt((money-(obaek * 500))/100);
+			document.getElementById("baek").value = baek;
+			
+			var osib = parseInt( (money-((obaek * 500)+(baek*100)))/50 );
+			document.getElementById("osib").value = osib;
+			
+			var sib = parseInt( (money-(   (obaek * 500)+(baek*100)+(osib*50)))/10);
+			document.getElementById("sib").value = sib;
+	}
+	
+	// -- 선생님방법
+	function myCalculate()
+	{
+		// 확인
+		//alert("함수호출확인~!!");
+		var moneyStr = document.getElementById("m").value;
+		var money = parseInt(moneyStr);
+		document.getElementById("mtot").value = money;
+		
+		// 받아온 money를 계속 초기화 해주면서 변수에 담아내기
+		var m500 = parseInt(money/500);
+		//alert(m500);
+		money = money%500; // money %= 500;
+		
+		var m100 = parseInt(money/100);
+		money = money%100;
+		
+		var m50 = parseInt(money/50);
+		money = money%50;
+		
+		var m10 = parseInt(money/10);
+		// 연산 끝
+		
+		document.getElementById("m500").value = m500;
+		document.getElementById("m100").value = m100;
+		document.getElementById("m50").value = m50;
+		document.getElementById("m10").value = m10;
+		
+	}
+	
+	
+	
+</script>
+</head>
+<body>
+<!-- 
+	특정금액(10원 ~ 990원)을 사용자로부터 입력받아
+	화폐단위로 구분하여 출력하는 페이지를 구성한다.
+	화폐 단위는 편의상 오백원, 백원, 오십원, 십원으로 구분한다.
+	HTML, CSS, Javascript를 활용한다.
+	페이지 기본 레이아웃 구성
+	---------------------------------------------------------
+	금  액 [          ] 원
+	
+	<결과><취소>
+	
+	총  액 [          ] 원
+	오백원 [          ] 개
+	백  원 [          ] 개
+	오십원 [          ] 개
+	십  원 [          ] 개 
+ -->
+<div>
+	<h1> 거스름돈 받기 </h1> 
+         <hr>
+</div>
+
+<div>
+	<form>
+		금&nbsp;&nbsp;액&nbsp;<input type = "text" class ="txtNum" id = "money"> 원<br>
+		
+		 <input type = "button" value = "<결과>" id = "result" class = "btn" onclick = "calMoney()">
+		 <input type = "reset" value = "<취소>" class = "btn"> <br>
+		
+		총&nbsp;&nbsp;액&nbsp;<input type = "text" class ="txtNum" id = "tot"> 원<br>
+		오백원&nbsp;<input type = "text" class ="txtNum" id = "obaek"> 개<br>
+		백&nbsp;&nbsp;원&nbsp;<input type = "text" class ="txtNum" id = "baek"> 개<br>
+		오십원&nbsp;<input type = "text" class ="txtNum" id = "osib"> 개<br>
+		십&nbsp;&nbsp;원&nbsp;<input type = "text" class ="txtNum" id = "sib"> 개<br>
+	
+	</form>
+</div>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<div>
+	<form>
+		<table	style="width : 200px;">
+			<tr>
+				<td>
+					금액
+				</td>
+				<td>
+					<input type = "text" style = "width: 100px;" class = "txt" id = "m">
+				</td>
+				<td>
+					원
+				</td>
+			</tr>
+			
+			<tr>
+				<td>
+					<input type = "button" class = "btn" value = "결과" onclick = "myCalculate()">
+				</td>
+				<td>
+					<input type = "reset" class = "btn" value = "취소">
+				</td>
+			</tr>
+
+			<tr>
+				<td>
+					총액
+				</td>
+				<td>
+					<input type = "text" style = "width: 100px;" class = "txt" id = "mtot" disabled = "disabled">
+				</td>
+				<td>
+					원
+				</td>
+			</tr>
+			<tr>
+				<td>
+					오백원
+				</td>
+				<td>
+					<input type = "text" style = "width: 100px;" class = "txt" id = "m500" disabled = "disabled">
+				</td>
+				<td>
+					개
+				</td>
+			</tr>
+			<tr>
+				<td>
+					백원
+				</td>
+				<td>
+					<input type = "text" style = "width: 100px;" class = "txt" id = "m100" disabled = "disabled">
+				</td>
+				<td>
+					개
+				</td>
+			</tr>
+			<tr>
+				<td>
+					오십원
+				</td>
+				<td>
+					<input type = "text" style = "width: 100px;" class = "txt" id = "m50" disabled = "disabled">
+				</td>
+				<td>
+					개
+				</td>
+			</tr>
+			<tr>
+				<td>
+					십원
+				</td>
+				<td>
+					<input type = "text" style = "width: 100px;" class = "txt" id = "m10" disabled = "disabled">
+				</td>
+				<td>
+					개
+				</td>
+			</tr>
+
+
+
+		
+		</table>
+	</form>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

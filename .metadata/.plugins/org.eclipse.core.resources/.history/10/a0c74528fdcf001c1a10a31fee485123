@@ -1,0 +1,8 @@
+<%
+	int result;
+	int n1 = Integer.parseInt("n1");
+	int n2 = Integer.parseInt("n2");
+	
+	result=n1+n2;
+	
+%> 

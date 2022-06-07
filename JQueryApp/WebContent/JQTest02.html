@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JQTest02.html</title>
+<style type="text/css">
+	.item
+	{
+		border: solid 2px red;
+		color: white;
+		background: black;
+	}
+</style>
+
+
+<!-- jquery 함수 -->
+<script type="text/javascript" src="http://code.jquery.com/jquery.min.js">
+
+</script>
+
+<!-- 일반적인 자바스크립트 함수 -->
+<script type="text/javascript">
+	/*
+	function test()
+	{
+		alert("함수 호출 확인");
+		var a = 10;
+	}
+	*/
+	
+	/*
+	--------------[▼ 같은 의미 ▼]---------------
+	제이쿼리 함수 : jquery();
+	              :	$();
+	              : jquery(document).ready();
+				  : $(document).ready();
+	----------------------------------------------
+	*/
+	
+	
+	// 테스트 ① 그냥 함수 정의?만 했는데 페이지 호출하면 바로 알람 뜸
+	/*
+	$(document).ready(function()
+	{
+		//alert("함수 호출 확인");
+		
+		// ※ 우리가.. 또는 이 페이지를 이용하는 사용자가
+		//    뭔가 건드리지 않아도
+		//    즉, 특별한 이벤트를 발생시키지 않아도.
+		//    자동으로 처리할 수 있는 영역
+	});
+	*/
+	
+	// 테스트 ② 그냥 함수 정의?만 했는데 페이지 호출하면 바로 알람 뜸
+	$(function()
+	{
+		//alert("함수호출확인2");
+		//$("h1").click(h1이 클릭외었을 때 수행되어야 할 기능, 동작, 행위);
+		//                       ▼▼▼▼
+		//$("h1").click(h1이 클릭외었을 때 호출되어야 할 함수);
+		//                       ▼▼▼▼
+		//$("h1").click(이름필요없는함수정의);
+		
+		// §참고 : click() 은 jquery 함수이다.
+		
+		/*
+		$("h1").click(function()
+		{
+			//alert("클릭되었네요~");
+			//alert( $(this).html() );
+			
+			// § 참고 : $(this).html()   this 에 해당하는 값을 명시
+			//$(this).html("어떻게될까요?");
+			$(this).html( $(this).html()+"★");
+		});
+		*/
+		
+		//$("h1").on("click", 기능);
+		/* $("h1").on("click", function()
+		{
+			//alert("클릭~!!");
+			alert( $(this).html() );
+			
+		}); */
+		
+		/* 
+		$("h1").one("click", function()
+		{
+			//alert("클릭~!!!");
+			//alert( $(this).html());
+			
+			//$(this).html(기능);
+			$(this).html(function(index, html)
+			{
+				//alert(html);	// 해당 이름
+				//alert(index);	// 0
+				return html + "♥";
+			});
+		});		
+		*/
+		
+		// {속성명:속성값, 속성명:속성값, 속성명:속성값, ...}
+		
+		//$("h1").on({이벤트:기능, 이벤트:기능,...});
+		/* 
+		$("h1").on(
+		{
+			이벤트:기능, 이벤트:기능,...
+		});
+		*/
+		
+		/* 
+		$("h1").on(
+		{
+			// mouseenter : 어찌어찌하겠다, → 마우스 진입할 때
+			// mouseleave : 저찌저찌하겠다, → 마우스 떠나갈 때
+			mouseenter:function(){ $(this).addClass("item");  }
+		  , mouseleave:function(){ $(this).removeClass("item");   }
+		  
+		});
+		*/
+		
+		// mouseenter, mouseleave
+		// § hover 은 enter / leave 가 혼합된 형태로 정의
+		$("h1").hover(function ()
+		{
+			$(this).addClass("item");
+			
+		}, function ()
+		{
+			$(this).removeClass("item");
+		});
+		
+		
+	});
+	
+	
+	
+	
+</script>
+
+</head>
+<body>
+
+
+<!-- Test -->
+<!-- <h1 onclick="test()">박현수</h1> -->
+<!-- <h1 class="item">우수정</h1> -->
+
+<h1>박현수</h1>
+<h1>우수정</h1>
+<h1>김태형</h1>
+<h1>이아린</h1>
+
+
+
+
+
+
+
+</body>
+</html>

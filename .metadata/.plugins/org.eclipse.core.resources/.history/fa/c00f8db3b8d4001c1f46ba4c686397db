@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>BootEx01.html</title>
+<!-- 부트스트랩 적용 이전과 이후 내용을 비교 확인  -->
+<!-- 각 엘리먼트들이 갖는 시각적인 효과 및 여백 정책  -->
+
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+
+
+</head>
+<body>
+
+<h1>제목입니다.</h1>
+
+평범한 텍스트입니다.
+
+</body>
+</html>

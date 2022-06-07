@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JQTest06.html</title>
+<script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+<style>
+   a#MOVE_TOP_BTN {
+      position: fixed;
+      right: 2%;
+      bottom: 10px;
+      display: none;
+      z-index: 999;
+   }
+</style>
+
+<script>
+    $(function() {
+        $(window).scroll(function()
+        {
+        	var docHeight = $(window).height();
+        	
+            if ($(this).scrollTop() > docHeight)
+            {
+               $('#MOVE_TOP_BTN').fadeIn();
+            }
+            else
+            {
+               $('#MOVE_TOP_BTN').fadeOut();
+            }
+        });
+        
+        $("#MOVE_TOP_BTN").click(function()
+        {
+            $('html, body').animate(
+            {
+               scrollTop : 0
+            }, 400);
+            return false;
+        });
+    });
+</script>
+
+
+<script type="text/javascript">
+	$(document).ready(function()
+	{
+		// 초기 게시물 구성 → 스크롤 생성 -----------------------------------
+		// § 참고 : 셋팅값 - 화면 100% 기준 ▼ (개인 차 있음)
+		
+		
+		var docheight = $(document).height();
+		
+		// 테스트(문서의 높이)
+		// alert(docheight);
+		// --==>> 606
+		
+		// 테스트(스크롤 높이)
+		var scrollheight = $(window).scrollTop() + $(window).height();
+		//alert(scrollheight);
+		// --==>> 667
+		
+		for(var i=0; i<30; i++)
+		{
+			$("<h3>기존의 읽어온 게시물 " + $(document).height() + " / "
+					                      + $(window).scrollTop() + " / "
+					                      + $(window).height()
+					                      + "</h3>").appendTo("body");		
+		}
+		
+		// ----------------------------------- 초기 게시물 구성 → 스크롤 생성
+		
+		
+		$(window).scroll(function()
+		{
+			
+			var docHeight = $(document).height();
+			var scrollHeight = $(window).scrollTop() + $(window).height();
+			
+			// 스크롤이 바닥으로 내려졌을 때..
+			// 태그 10개 추가하여 body 에 붙이기
+			if (docHeight == scrollHeight)
+			{
+				alert("스크롤");
+				for (var i = 0; i < 10; i++)
+				{
+					$("<h3>추가로 읽어온 게시물 " + $(document).height() + " / "
+		                     					  + $(window).scrollTop() + " / "
+		                     					  + $(window).height()
+		                     					  + "</h3>").appendTo("body");		
+				} 
+			}
+		});
+		
+			
+	});
+</script>
+</head>
+<body>
+
+<a id="MOVE_TOP_BTN" href="#">처음으로</a>
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

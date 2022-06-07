@@ -1,0 +1,42 @@
+물리적 구성요소
+-- database --
+WebApp20_scott.sql
+
+-- java --
+DBConn.java
+BoardDTO.java
+BoardDAO.java
+MyUtil.java
+
+
+-- jsp --
+List.jsp
+Created.jsp
+Created_ok.jsp
+Article.jsp
+Updated.jsp
+Updated_ok.jsp
+Delete.jsp
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

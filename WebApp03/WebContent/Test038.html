@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Test038.html</title>
+<link rel = "stylesheet" type="text/css" href="css/main.css">
+<script type="text/javascript">
+	// 자바스크립트 배열 객체 구성
+	var boardArray = new Array();
+	
+	// check ~!!!
+	// 프로토타입 구성을 통해 ... 사용자 정의 객체의 함수(기능, 동작)정의
+	function Board(uName, uContent)
+	{
+		this.userName = uName;
+		this.content = uContent;
+		this.writeDay = new Date();
+		
+	}
+	Board.prototype.userLocalString = function()
+	{
+		return this.writeDay.getFullYear() + "-"
+					+ (this.writeDay.getMonth()+1) + "-"
+					+ this.writeDay.getDate() + " "
+					+ this.writeDay.getHours() + ":"
+					+ this.writeDay.getMinutes() + ":"
+					+ this.writeDay.getSeconds();
+	};
+	
+	// 글쓰기 버튼이 클릭되었을 때 호출되어 기능하는 함수
+	function protoTest()
+	{
+		// 확인
+		//alert("함수 호출 확인~");
+		var uName = document.getElementById("uName").value;
+		var uContent = document.getElementById("uContent").value;
+		
+		var len = boardArray.length;
+		//alert(len); -- 현재시점 0
+		
+		boardArray[len] = new Board(uName, uContent);
+		
+		//alert(len);
+		//-- 작성이 이루어질 때 마다.. 늘어남 + 1 씩
+		
+		// 내용 출력 함수 호출
+		print(len);
+		
+		
+	}
+	
+	// 내용 출력 함수 정의
+	function print(idx)
+	{
+		// 확인
+		//var strTemp = boardArray[idx].content;
+		//alert(strTemp);
+		var tableNode = document.getElementById("bbsTable");
+		var trNode = document.createElement("tr");
+		//alert("1");
+		trNode.appendChild(createTdNode((idx+1).toString())); 				 // 번호
+		trNode.appendChild(createTdNode(boardArray[idx].userName)); 	 	 // 이름
+		trNode.appendChild(createTdNode(boardArray[idx].content)); 		 	 // 내용
+		trNode.appendChild(createTdNode(boardArray[idx].userLocalString())); // 작성일
+		//alert("1");
+		tableNode.appendChild(trNode);
+		//alert("1");
+		
+	}
+	
+	function createTdNode(val)
+	{
+		var textNode = document.createTextNode(val);
+		var tdNode = document.createElement("td");
+		tdNode.appendChild(textNode);
+		return tdNode;
+	}
+	
+	
+</script>
+</head>
+<body>
+
+<div>
+	<h1>자바스크립트 활용</h1>
+	<hr>
+</div>
+
+
+<div>
+	<p style = "font-weight: bold">사용자 정의 객체 및 프로토타입 활용</p>
+	
+	<div>
+		<form>
+			<!-- 입력 폼을 구성하는 레이아웃 테이블 → 나중에 div 로 구성해 볼 것  -->
+			<table class = "table">
+				<tr>
+					<th>작성자</th>
+					<td>
+						<input type = "text" id = "uName" style = "width: 150px">
+					</td>
+				</tr>
+				<tr>
+					<th>내용</th>
+					<td>
+						<input type = "text" id = "uContent" style = "width: 600px">
+					</td>
+				</tr>
+			</table>
+			<br>
+			
+			<input type="button" value="글쓰기" class="btn" style="width:680px;"
+			          onclick = "protoTest()">
+			<br><br>
+			
+			<table class = "table" border = "1" id = "bbsTable">
+				<tr>
+					<th style="width: 40px;">번호</th>
+					<th style="width: 90px;">작성자</th>
+					<th style="width: 400px;">내용</th>
+					<th style="width: 150px;">작성일</th>
+				</tr>
+			</table>
+		</form>
+	</div>
+</div>
+</body>
+</html>

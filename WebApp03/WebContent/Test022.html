@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Test022.html</title>
+<style type="text/css">
+	*
+	{
+		background-color: black;
+		font-size: 20pt;
+		color: grey;
+		font-weight: bold;
+		font-style: oblique; 
+	}
+</style>
+
+<script type="text/javascript">
+
+	function addMember()
+	{
+		// 확인
+		alert("함수 호출 확인~!!!");
+		var str = "";
+		var arr= new Array();
+		var n = 0;
+		do
+		{
+			// ※ 『prompt()』 대화창을 통해 데이터 입력 안내 → 입력 데이터를 변수 str에 담아내기 
+			str = prompt("이름 전화번호(" + (n+1) + ")");
+			//alert(str);
+			if (str == null || str == "." || str == " ")
+			{	
+				break;
+			}
+			arr[n] = str;
+			n++;
+			
+		} while (true);
+		
+
+		document.getElementById("txtCount").value = arr.length;
+		document.getElementById("txtResult").value = " 이름      전화번호   \n";
+		
+		for (var i = 0; i < arr.length; i++)
+		{
+
+			document.getElementById("txtResult").value += arr[i] + "\n";
+		}			
+			
+		
+	}
+	
+</script>
+
+</head>
+<body>
+<!-- 
+	여러 명의 이름과 전화번호 입력받고
+	그 내용을 전체 출력하는 페이지를 구성한다.
+	HTML, CSS, Javascript 를 활용한다.
+	
+	※ prompt() 활용
+	
+	페이지 레이아웃
+	-------------------------------------------------
+	<회원 정보 입력>
+	
+	전체 회원 수 : [     ] 명
+	----------------------------
+	  이름         전화번호
+	----------------------------
+	          : 
+	
+	-------------------------------------------------
+ -->
+<div>
+	<h1>자바스크립트 활용</h1>
+	<hr>
+</div>
+
+<div>
+	<form>
+		<input type = "button" value="회원 정보 입력" class="btn" style = "width: 200px;" onclick = "addMember()">
+		<br><br>
+		
+		전체 회원 수 <input type = "text" id = "txtCount" class = "txt" readonly = "readonly" style = "width: 20px">
+		명
+		<br>
+		<textarea rows= "10" cols="30" id = "txtResult" readonly="readonly">
+		
+		</textarea>
+		
+	</form>
+</div>
+
+
+
+
+</body>
+</html>
